@@ -1,0 +1,84 @@
+#debugt {
+  float: right;
+}
+
+#game {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  top: auto;
+  bottom: auto;
+  margin: auto;
+}
+
+#plyr2 {
+  left: 10px;
+  top: 250px;
+  position: absolute;
+  height: 100px;
+  width: 20px;
+  background-color: #00FFF0;
+  z-index: 12;
+}
+
+#plyr1 {
+  right: 10px;
+  top: 250px;
+  position: absolute;
+  height: 100px;
+  width: 20px;
+  background-color: #00FFF0;
+  z-index: 12;
+}
+
+img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+#ball {
+  left: 390px;
+  top: 290px;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: #00FFFF;
+  z-index: 13;
+}
+
+#p2score {
+  position: absolute;
+  left: 120px;
+  z-index: 14;
+  color: #00FFF0;
+  font-family: arial;
+  font-size: 34pt;
+  top: 20px;
+}
+
+#p1score {
+  position: absolute;
+  right: 120px;
+  z-index: 14;
+  color: #00FFF0;
+  font-family: arial;
+  font-size: 34pt;
+  top: 20px;
+}
+
+#opening {
+  border-radius: 20px;
+  opacity: 50;
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  top: auto;
+  bottom: auto;
+  margin: auto;
+  z-index: 15;
+}

@@ -1,0 +1,27 @@
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+<form id="the-form" action="/">
+    <input type="text" id="my-message" value="Your message">
+    <input type="submit" value="postMessage">
+</form>
+
+<iframe id="da-iframe" src="child.html"></iframe>
+
+<script>
+   window.onload = function () {
+    var iframeWin = document.getElementById("da-iframe").contentWindow,
+        form = document.getElementById("the-form"),
+        myMessage = document.getElementById("my-message");
+
+    myMessage.select(); 
+
+    form.onsubmit = function () {
+        iframeWin.postMessage(myMessage.value, "http://robertnyman.com");
+        return false;
+    };
+};
+</script>
+</body>
+</html>

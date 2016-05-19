@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>Advertisement</title>
+		<style>
+			div {
+				text-align:center;
+				font-size: 32px;
+			}
+			p {
+				font-size:10px;
+			}
+
+			#secondtext {
+				display: none;
+			}
+
+			#yearly {
+				display: none;
+				font-size: 9px;
+			}
+		</style>
+		<script>
+			function showfirst() {
+			  var elem = document.getElementById("firsttext");   
+			  var scale = 0;
+			  var rot = 0;
+			  var id = setInterval(frame, 5);
+			  function frame() {
+			    if (scale >= 1) {
+			      clearInterval(id);
+			      setTimeout(showsecond, 1000);
+			    } else {
+			      scale += 0.01; 
+			      rot += 3.6;
+			      elem.style.WebkitTransform = 'rotate(' + rot + 'deg) scale(' + scale + ', ' + scale + ')'; 
+			      elem.style.Transform = 'rotate(' + rot + 'deg) scale(' + scale + ', ' + scale + ')'; 
+			    }
+			  }
+			}
+
+			function showsecond() {
+			  var elem = document.getElementById("secondtext");   
+			  var scale = 0;
+			  var amount = 0.02;
+			  elem.style.display = "block";
+			  var id = setInterval(frame, 5);
+			  function frame() {
+			    if (scale >= 1.5) {
+			      clearInterval(id);
+			      showthird();
+			    } else {
+			      scale += amount; 
+			      elem.style.WebkitTransform = 'scale(' + scale + ', ' + scale + ')'; 
+			      elem.style.Transform = 'scale(' + scale + ', ' + scale + ')'; 
+			    }
+			  }
+			}
+
+			function showthird() {
+			  var elem = document.getElementById("secondtext");   
+			  var scale = 1.5;
+			  var amount = 0.02;
+			  var id = setInterval(frame, 5);
+			  function frame() {
+			    if (scale <= 1) {
+			      clearInterval(id);
+			      document.getElementById("yearly").style.display = "block";
+			    } else {
+			      scale -= amount; 
+			      elem.style.WebkitTransform = 'scale(' + scale + ', ' + scale + ')'; 
+			      elem.style.Transform = 'scale(' + scale + ', ' + scale + ')'; 
+			    }
+			  }
+			}
+</script>
+	</head>
+	<body onload="showfirst()">
+		<div id="firsttext">
+			How would <b>YOU</b> like to be able to see this new planet before anyone else?
+			<br>
+			<img width="30%" src="planet.jpg" id="planet"/>
+			<img width="20%" src="spyglass.png" id="spyglass"/>
+		</div>
+		<div id="secondtext">
+			Just come over to <a href="adending.html">our site</a> and buy your very own infinite range spyglass for yourself or a friend for only 10 easy payments of $50!*
+		</div>
+		<div id="yearly">*Every year for the rest of your life</div>
+	</body>
+</html>
