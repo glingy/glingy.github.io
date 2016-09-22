@@ -60,7 +60,7 @@ function createtest() {
   console.log(testArray);
 }
 
-function submit(showw = 0) {
+function submit(showw) {
   var show = document.getElementById('answers').checked;
   if (showw) {
     show = 0;
