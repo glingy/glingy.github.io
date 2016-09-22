@@ -13,7 +13,7 @@ mark {
 }
 
 body {
-  // thanks to w3schools for this part
+  /* thanks to w3schools for this part*/
   background: blue; /* For browsers that do not support gradients */
     background: -webkit-radial-gradient(#00FFFF, blue); /* Safari 5.1 to 6.0 */
     background: -o-radial-gradient(#00FFFF, blue); /* For Opera 11.6 to 12.0 */
