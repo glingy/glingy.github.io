@@ -97,7 +97,7 @@ function submit(showw) {
     if (wrongcount === 0) {
       alert('Correct!');
     } else {
-      alert(wrongcount + "answers incorrect.\n%" + (Math.round((blankcount - wrongcount) / blankcount * 10000) / 100) + ".");
+      alert(wrongcount + "answers incorrect.\n" + (Math.round((blankcount - wrongcount) / blankcount * 10000) / 100) + "%.");
     }
   }
   console.log(testwans);
