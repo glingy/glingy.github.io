@@ -134,3 +134,9 @@ function restrict() {
     document.getElementById("blanks").value = "0";
   }
 }
+
+function isGrammarly() {
+  if (document.body.data-gr-c-s-loaded !== undefined) {
+    alert('Please disable grammarly extension for this domain.');
+  }
+}
