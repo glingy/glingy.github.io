@@ -7,16 +7,20 @@
   <body onload="setTimeout(isGrammarly, 1000);">
     <div class="maindiv" align="center">
       <h1>Fill-In-The-Blanks Memorization Helper</h1>
-      <p>Does not currently support accents.</p>
+      <p>Does not currently correctly support accents.</p>
+      <span>Presets: </span>
+      <select id="preset" onchange="presetc()">
+        <option value="0" selected>Blank</option>
+      </select><br>
       <textarea autofocus="true" onclick="visinputbox(true)" cols="80" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
       <button onclick="createtest()">Create!</button>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
       <input id="blanks" onchange="restrict()" style="width: 50px" type="number"></input>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show answers: </span>
       <input id="answers" type="checkbox"></input><br>
-
       <div id="fitbt"></div><br>
       <button onclick="submit(0)" id="submit">Check Answers</button>
     </div>
+    <script src="js/presets.js"></script>
   </body>
 </html>

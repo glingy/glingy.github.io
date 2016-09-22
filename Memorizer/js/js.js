@@ -140,3 +140,25 @@ function isGrammarly() {
     alert('Please disable grammarly extension for this domain.');
   }
 }
+
+//init preset array
+var presets = [""];
+
+//load presets
+function loadpresets(arr) {
+  var wo;
+  for (var i = 1; i < arr.length; i++) {
+    wo = document.createElement("option");
+    wo.value = "" + i;
+    wo.innerHTML = arr[i].name;
+    presets.push(arr[i].preset);
+    document.getElementById("preset").appendChild(wo);
+  }
+
+}
+
+// load chosen preset
+function presetc() {
+  var pnum = parseInt(document.getElementById("preset").value);
+  document.getElementById("input").value = presets[pnum];
+}
