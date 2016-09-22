@@ -136,7 +136,7 @@ function restrict() {
 }
 
 function isGrammarly() {
-  if (document.getElementsByClassName("grammarly-disable-indicator").length == 1) {
+  if (document.getElementsByTagName("grammarly-card").length > 0) {
     alert('Please disable grammarly extension for this domain.');
   }
 }
