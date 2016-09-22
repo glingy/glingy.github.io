@@ -9,12 +9,10 @@
     <textarea autofocus="true" onclick="visinputbox(true)" cols="120" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
     <button onclick="createtest()">Create!</button>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
-    <input id="blanks" style="width: 50px" type="number"></input>
+    <input id="blanks" onchange="restrict()" style="width: 50px" type="number"></input>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show answers: </span>
     <input id="answers" type="checkbox"></input>
     <button onclick="submit(0)" id="submit">Check Answers</button><br>
     <div id="fitbt"></div>
-
-
   </body>
 </html>

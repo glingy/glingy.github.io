@@ -6,6 +6,10 @@ div {
   color: #00FF00;
 }*/
 
+textarea {
+  resize: none;
+}
+
 mark {
   background-color: #00FF00;
 }

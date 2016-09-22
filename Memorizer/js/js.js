@@ -1,6 +1,6 @@
 var testinput = "";
 var testArray = [];
-var testHTML = "";
+var words = [];
 var blankcount = 0;
 var numbers = [];
 var number = 0;
@@ -10,50 +10,53 @@ var testmade = 0;
 var positionArray = [];
 var textboxinputtedtext = "";
 var textinputboxshown = true;
-function addblanks() {
-  blankcount = parseInt(document.getElementById('blanks').value);
-  wordcount = Math.floor(testArray.length/2);
+
+function random() {
+  return Math.floor(1-Math.abs(Math.rand()-Math.rand()) * wordcount);
+}
+
+function cbas() {
   answerArray = [];
-  positionArray = [];
-  if (isNaN(blankcount)) {
-    blankcount = wordcount;
+  var randnum = 0;
+  for (var i = 0; i < blankcount;i++) {
+    randnum = words[i][1];
+    answerArray.push(words[i][0]);
+    positionArray.push(words[i][1]);
+    testArray[randnum] = "<input id='blank" + i + "' type='text'></input>";
   }
-  if (wordcount < blankcount) {
-    blankcount = wordcount;
-  }
-  document.getElementById('blanks').value = "" + blankcount;
-  if (wordcount === 0) {
-    alert("Please enter something in to make a test of.")
-  }
-  initializenumbers(wordcount);
-  for (var i = 0; i < blankcount; i++){
-    number = findnewnumber();
-    console.log('blank: ' + number);
-    answerArray.push(testArray[((number+1)*2)-1]);
-    positionArray.push(((number+1)*2)-1);
-    testArray[((number+1)*2)-1] = '<input type="text" id="blank' +i+'"></input>';
-  }
-  document.getElementById('fitbt').innerHTML = testArray.join("");
-  testmade = 1;
 }
 
-function initializenumbers(words) {
-  numbers = [];
-   for (var i = 0; i < words; i++) {
-     numbers.push(i);
-   }
+function makewordarray() {
+  words = [];
+  for (var i = 0; i < Math.floor(testArray.length/2);i++) {
+    words.push([testArray[(i*2)+1], (i*2)+1]);
+  }
 }
 
-function findnewnumber() {
-  var tmp = Math.floor(Math.random() * numbers.length);
-  var tmp2 = numbers.splice(tmp, 1)[0];
-  return tmp2;
+function addblanks() {
+  if (testArray.length < 2) {
+    alert("Please enter text to make a test from.");
+    return 0;
+  }
+  makewordarray();
+  words.sort(function(a,b) {return b[0].length - a[0].length || a[0].localeCompare(b[0]);});
+  //set num of words
+  wordcount = words.length;
+  //set num of blanks
+  blankcount = parseInt(document.getElementById('blanks').value);
+  blankcount = isNaN(blankcount) || wordcount < blankcount ? wordcount : blankcount;
+  //reset blank input box with current value
+  document.getElementById('blanks').value = "" + blankcount +"";
+  //choose blanks and substitute
+  cbas();
+  //join testArray
+  var testHTML = testArray.join("");
+  //set testbox
+  document.getElementById('fitbt').innerHTML = testHTML;
 }
-
 
 function createtest() {
   visinputbox(true);
-  numberstring = "";
   testinput = document.getElementById('input').value;
   testArray = testinput.split(/\b/);
   if (/[a-z]|[A-Z]|[0-9]/.test(testArray[0].split('')[0]) && testArray[0] != "") {
@@ -64,7 +67,10 @@ function createtest() {
   setTimeout(function() {
     visinputbox(false);
   }, 100);
+  testmade = true;
 }
+
+//// continue modifying later
 
 function submit(showw) {
   var show = document.getElementById('answers').checked;
@@ -97,11 +103,8 @@ function submit(showw) {
     if (wrongcount === 0) {
       alert('Correct!');
     } else {
-      alert(wrongcount + "answers incorrect.\n" + (Math.round((blankcount - wrongcount) / blankcount * 10000) / 100) + "%.");
+      alert(wrongcount + " answers incorrect.\n" + (Math.round((blankcount - wrongcount) / blankcount * 10000) / 100) + "%.");
     }
-  }
-  console.log(testwans);
-  if (!showw) {
     document.getElementById('fitbt').innerHTML = testwans.join("");
     for (var i = 0; i < blankcount; i++) {
       wo = document.getElementById('blank'+i);
@@ -121,5 +124,13 @@ function visinputbox(show) {
     document.getElementById('input').value = " ";
     document.getElementById('input').readOnly = true;
     textinputboxshown = false;
+  }
+}
+
+// restrict blank input to positive numbers
+function restrict() {
+  var wo = document.getElementById("blanks").value
+  if (parseInt(wo) < 0) {
+    document.getElementById("blanks").value = "0";
   }
 }
