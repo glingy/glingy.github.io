@@ -5,14 +5,17 @@
     <script src="js/js.js"></script>
   </head>
   <body>
-    <p>Does not currently support accents.</p>
-    <textarea autofocus="true" onclick="visinputbox(true)" cols="120" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
-    <button onclick="createtest()">Create!</button>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
-    <input id="blanks" onchange="restrict()" style="width: 50px" type="number"></input>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show answers: </span>
-    <input id="answers" type="checkbox"></input>
-    <button onclick="submit(0)" id="submit">Check Answers</button><br>
-    <div id="fitbt"></div>
+    <div class="maindiv" align="center">
+      <p>Does not currently support accents.</p>
+      <textarea autofocus="true" onclick="visinputbox(true)" cols="80" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
+      <button onclick="createtest()">Create!</button>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
+      <input id="blanks" onchange="restrict()" style="width: 50px" type="number"></input>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show answers: </span>
+      <input id="answers" type="checkbox"></input><br>
+
+      <div id="fitbt"></div><br>
+      <button onclick="submit(0)" id="submit">Check Answers</button>
+    </div>
   </body>
 </html>
