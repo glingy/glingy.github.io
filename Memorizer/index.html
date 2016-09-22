@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Memorizer</title>
+    <link rel="stylesheet" href="css/css.css"/>
+    <script src="js/js.js"></script>
+  </head>
+  <body>
+    <p>Does not currently support accents.</p>
+    <textarea autofocus="true" cols="120" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea>
+    <button onclick="createtest()">Create!</button>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
+    <input id="blanks" style="width: 50px" type="number"></input>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show answers: </span>
+    <input id="answers" type="checkbox"></input>
+    <button onclick="submit()" id="submit">Check Answers</button><br>
+    <div id="fitbt"></div>
+
+
+  </body>
+</html>
