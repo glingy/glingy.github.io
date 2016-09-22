@@ -8,6 +8,7 @@ var wordcount = 0;
 var answerArray = [];
 var testmade = 0;
 var positionArray = [];
+var textboxinputtedtext = "";
 function addblanks() {
   blankcount = parseInt(document.getElementById('blanks').value);
   wordcount = Math.floor(testArray.length/2);
@@ -50,6 +51,8 @@ function findnewnumber() {
 
 
 function createtest() {
+  document.getElementById('show').checked = true;
+  show();
   numberstring = "";
   testinput = document.getElementById('input').value;
   testArray = testinput.split(/\b/);
@@ -58,6 +61,10 @@ function createtest() {
   }
   addblanks();
   console.log(testArray);
+  setTimeout(function() {
+    document.getElementById('show').checked = false;
+    show();
+  }, 100);
 }
 
 function submit(showw) {
@@ -102,5 +109,16 @@ function submit(showw) {
       wo.value = entered[i];
     }
     submit(1);
+  }
+}
+
+function show() {
+  if (document.getElementById('show').checked && textboxinputtedtext !== "") {
+    document.getElementById('input').value = textboxinputtedtext;
+    document.getElementById('input').readOnly = false;
+  } else if (!document.getElementById('show').checked){
+    textboxinputtedtext = document.getElementById('input').value;
+    document.getElementById('input').value = " ";
+    document.getElementById('input').readOnly = true;
   }
 }
