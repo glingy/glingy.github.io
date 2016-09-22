@@ -9,6 +9,7 @@ var answerArray = [];
 var testmade = 0;
 var positionArray = [];
 var textboxinputtedtext = "";
+var textinputboxshown = true;
 function addblanks() {
   blankcount = parseInt(document.getElementById('blanks').value);
   wordcount = Math.floor(testArray.length/2);
@@ -51,8 +52,7 @@ function findnewnumber() {
 
 
 function createtest() {
-  document.getElementById('show').checked = true;
-  show();
+  visinputbox(true);
   numberstring = "";
   testinput = document.getElementById('input').value;
   testArray = testinput.split(/\b/);
@@ -62,8 +62,7 @@ function createtest() {
   addblanks();
   console.log(testArray);
   setTimeout(function() {
-    document.getElementById('show').checked = false;
-    show();
+    visinputbox(false);
   }, 100);
 }
 
@@ -112,13 +111,15 @@ function submit(showw) {
   }
 }
 
-function show() {
-  if (document.getElementById('show').checked && textboxinputtedtext !== "") {
+function visinputbox(show) {
+  if (!textinputboxshown && show) { // want it shown
     document.getElementById('input').value = textboxinputtedtext;
     document.getElementById('input').readOnly = false;
-  } else if (!document.getElementById('show').checked){
+    textinputboxshown = true;
+  } else if (textinputboxshown && !show){ // want it hidden
     textboxinputtedtext = document.getElementById('input').value;
     document.getElementById('input').value = " ";
     document.getElementById('input').readOnly = true;
+    textinputboxshown = false;
   }
 }
