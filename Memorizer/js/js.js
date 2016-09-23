@@ -58,18 +58,14 @@ function addblanks() {
 function createtest() {
   visinputbox(true);
   testinput = document.getElementById('input').value;
-  testArray = testinput.split(/([^a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556]+(?=[a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556]|$))/);
+  testArray = testinput.split(/([^a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556\u0027]+(?=[a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556\u0027]|$))/);
   // cut end if blank -------******
   if (testArray[testArray.length - 1] === "") {
     testArray.pop();
   }
-  if (testArray[0] === "") {
-    testArray.shift();
-  }
-  if (/[a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556]/.test(testArray[0].split('')[0]) && testArray[0] != "") {
+  if (/[a-z]|[A-Z]|[0-9]/.test(testArray[0].split('')[0]) && testArray[0] != "") {
     testArray.unshift("");
   }
-  console.log(testArray);
   addblanks();
   console.log(testArray);
   setTimeout(function() {
@@ -152,6 +148,25 @@ function isGrammarly() {
 //init preset array
 var presets = [""];
 
+//get get preset if any //from css-tricks.com
+function getQueryVariable(variable)
+{
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+
+function getget() {
+  var pre = getQueryVariable("preset");
+  if (pre) {
+    document.getElementById('input').value = pre;
+  }
+}
+
 //load presets
 function loadpresets(arr) {
   var wo;
@@ -162,6 +177,7 @@ function loadpresets(arr) {
     presets.push(arr[i].preset);
     document.getElementById("preset").appendChild(wo);
   }
+  getget();
 
 }
 
@@ -169,4 +185,12 @@ function loadpresets(arr) {
 function presetc() {
   var pnum = parseInt(document.getElementById("preset").value);
   document.getElementById("input").value = presets[pnum];
+}
+
+//create link to entered preset
+function createlink() {
+  var go = prompt('You will be redirected to a page with the url of the preset. Copy and use that url to get to that preset. Enter "no" to stop.');
+  if (go != "no") {
+    document.getElementById('form').submit();
+  }
 }
