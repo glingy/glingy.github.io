@@ -10,9 +10,8 @@
       <span>Presets: </span>
       <select id="preset" onchange="presetc()">
         <option value="0" selected>Blank</option>
-      </select>
-      <button onclick="createlink()">Create link from entered text.</button><br>
-      <textarea form="form" name="preset" autofocus="true" onclick="visinputbox(true)" cols="80" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
+      </select><br>
+      <textarea autofocus="true" onclick="visinputbox(true)" cols="80" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
       <button onclick="createtest()">Create!</button>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
       <input id="blanks" onchange="restrict()" style="width: 50px" type="number"></input>
@@ -20,7 +19,6 @@
       <input id="answers" type="checkbox"></input><br>
       <div id="fitbt"></div><br>
       <button onclick="submit(0)" id="submit">Check Answers</button>
-      <form id="form" method="get" action="http://glingy.github.io/Memorizer/index.html"></form>
     </div>
     <script src="js/presets.js"></script>
   </body>
