@@ -58,7 +58,7 @@ function addblanks() {
 function createtest() {
   visinputbox(true);
   testinput = document.getElementById('input').value;
-  testArray = testinput.split(/([^a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556\u0027]+(?=[a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556\u0027]|$))/);
+  testArray = testinput.split(/([^a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556']+(?=[a-zA-Z0-9\u00C0-\u02B8\u0388-\u0556']|$))/);
   // cut end if blank -------******
   if (testArray[testArray.length - 1] === "") {
     testArray.pop();
