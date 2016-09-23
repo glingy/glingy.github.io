@@ -152,6 +152,25 @@ function isGrammarly() {
 //init preset array
 var presets = [""];
 
+//get get preset if any //from css-tricks.com
+function getQueryVariable(variable)
+{
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+
+function getget() {
+  var pre = getQueryVariable("preset");
+  if (pre) {
+    document.getElementById('input').value = pre;
+  }
+}
+
 //load presets
 function loadpresets(arr) {
   var wo;
@@ -169,4 +188,12 @@ function loadpresets(arr) {
 function presetc() {
   var pnum = parseInt(document.getElementById("preset").value);
   document.getElementById("input").value = presets[pnum];
+}
+
+//create link to entered preset
+function createlink() {
+  var go = prompt('You will be redirected to a page with the url of the preset. Copy and use that url to get to that preset. Enter "no" to stop.');
+  if (go != "no") {
+    document.getElementById('form').submit();
+  }
 }
