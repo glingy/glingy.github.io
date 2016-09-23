@@ -181,6 +181,7 @@ function loadpresets(arr) {
     presets.push(arr[i].preset);
     document.getElementById("preset").appendChild(wo);
   }
+  getget();
 
 }
 
