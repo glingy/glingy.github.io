@@ -10,16 +10,18 @@
       <h1>Fill-In-The-Blanks Memorization Helper</h1>
       <span>Presets: </span>
       <select id="preset" onchange="presetc()">
-        <option value="0" selected>Blank</option>
+        <option value="0" id="selopt" selected>Blank</option>
       </select>
       <button onclick="toggleviscook()">Edit Saved Presets</button><br>
-      <div id="nameofcookie"><span>Enter cookie/preset name: </span><input id="cookiename" onchange="cookieval()" type="text"></input><button onclick="submitcookiename(1)">Save to Cookie</button><button onclick="submitcookiename(2)">Delete Cookie</button></div>
+      <div id="nameofcookie"><span>Enter preset name: </span><input id="cookiename" onchange="cookieval()" type="text"></input><button onclick="submitcookiename(1)">Save to Cookie</button><button onclick="submitcookiename(2)">Delete Cookie</button><button onclick="setgetpreset()">Create Link</button><br>
+      <div id="urldiv"><span>Just click Cmd-C or Ctrl-C: </span><input type="text" id="url" readonly="true"></input></div></div><br>
       <textarea autofocus="true" onclick="visinputbox(true)" cols="80" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
       <button onclick="createtest()">Create!</button>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
       <input id="blanks" onchange="restrict()" style="width: 50px" type="number"></input>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show answers: </span>
-      <input id="answers" type="checkbox"></input><br>
+      <input id="answers" type="checkbox"></input>
+      <br>
       <div id="fitbt"></div><br>
       <button onclick="submit(0)" id="submit">Check Answers</button>
     </div>

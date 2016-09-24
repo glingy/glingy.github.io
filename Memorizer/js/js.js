@@ -206,7 +206,7 @@ function loadpresets(arr) {
     document.getElementById("preset").appendChild(wo);
   }
   getcookie();
-
+  getgetpreset();
 }
 
 // load chosen preset
@@ -238,7 +238,52 @@ var viscook = false;
 function toggleviscook() {
   if (viscook) {
     document.getElementById('nameofcookie').style.display = "none";
+    viscook = false;
   } else {
     document.getElementById('nameofcookie').style.display = "block";
+    viscook = true;
+  }
+}
+
+//"get" preset
+function getgetpreset() {
+  var query = window.location.search.substring(1);
+  if (query == "") {return 0;}
+
+
+  var wo = document.createElement("option");
+  wo.innerHTML = "─────────";
+  wo.disabled = true;
+
+
+  document.getElementById("preset").appendChild(wo);
+  console.log(query);
+  var preset = query.split("&")[0];
+  console.log(preset);
+  preset = preset.split("=");
+  console.log(preset);
+  preset[1] = decodeURIComponent(preset[1]);
+
+  //add and select
+  wo = document.createElement("option");
+  wo.value = "" + presets.length;
+  wo.innerHTML = preset[0];
+  wo.selected = true;
+  presets.push(preset[1]);
+  document.getElementById("preset").appendChild(wo);
+  presetc();
+}
+
+function setgetpreset() {
+  visinputbox(true);
+  var rootpath = "" + window.location.origin + window.location.pathname + "";
+  var getpresetname = document.getElementById("cookiename").value;
+  var getpresetcont = document.getElementById("input").value;
+  var preurl = rootpath + "?" + getpresetname + "=" + encodeURIComponent(getpresetcont);
+  document.getElementById('url').value = preurl;
+  document.getElementById('urldiv').style.display = "block";
+  document.getElementById('url').select();
+  if (preurl.length > 255) {
+    alert("The link exceeded the maximim guaranteed length. It should still work with most major browsers, but some older browsers may cut off some of the preset. Generally, this is nothing to worry about.");
   }
 }
