@@ -151,6 +151,13 @@ var presets = [""];
 //get cookies with presets
 function getcookie() {
   if (document.cookie) {
+    //make divider
+    var wo = document.createElement("option");
+    wo.innerHTML = "─────────";
+    wo.disabled = true;
+    document.getElementById("preset").appendChild(wo);
+
+
     var cookie = document.cookie;
     var cookieArray = cookie.split(";");
     var curcookie;
