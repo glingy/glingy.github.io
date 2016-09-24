@@ -33,3 +33,6 @@ body {
     color: #000000;
     font-family: 'Droid Sans', sans-serif;
   }
+#nameofcookie {
+  display: none;
+}

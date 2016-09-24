@@ -148,23 +148,44 @@ function isGrammarly() {
 //init preset array
 var presets = [""];
 
-//get get preset if any //from css-tricks.com
-function getQueryVariable(variable)
-{
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i=0;i<vars.length;i++) {
-    var pair = vars[i].split("=");
-    if(pair[0] == variable){return pair[1];}
+//get cookies with presets
+function getcookie() {
+  if (document.cookie) {
+    var cookie = document.cookie;
+    var cookieArray = cookie.split(";");
+    var curcookie;
+    for (var i = 0; i < cookieArray.length; i++) {
+      curcookie = cookieArray[i].split("=");
+      var wo = document.createElement("option");
+      wo.value = "" + presets.length;
+      wo.innerHTML = curcookie[0];
+      //decypher preset
+      cookie = curcookie[1];
+      cookie = decodeURIComponent(cookie);
+      console.log(cookie);
+      //push cookie
+      presets.push(cookie);
+      document.getElementById("preset").appendChild(wo);
+    }
   }
-  return(false);
 }
 
-function getget() {
-  var pre = getQueryVariable("preset");
-  if (pre) {
-    document.getElementById('input').value = pre;
-  }
+function setcookie(name) {
+  var name = name ? name : "CookiePreset";
+  visinputbox(true);
+  var pres = document.getElementById('input').value;
+  document.cookie = name + "=" + encodeURIComponent(pres);
+}
+
+function delcookiep() {
+  delcookie(prompt("What is the name of the preset?"));
+}
+
+function delcookie(name) {
+  var name = name? name: "CookiePreset";
+  visinputbox(true);
+  var pres = document.getElementById('input').value;
+  document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT";
 }
 
 //load presets
@@ -177,20 +198,40 @@ function loadpresets(arr) {
     presets.push(arr[i].preset);
     document.getElementById("preset").appendChild(wo);
   }
-  getget();
+  getcookie();
 
 }
 
 // load chosen preset
 function presetc() {
   var pnum = parseInt(document.getElementById("preset").value);
+  visinputbox(true);
   document.getElementById("input").value = presets[pnum];
 }
 
-//create link to entered preset
-function createlink() {
-  var go = prompt('You will be redirected to a page with the url of the preset. Copy and use that url to get to that preset. Enter "no" to stop.');
-  if (go != "no") {
-    document.getElementById('form').submit();
+//validate cookiename form
+function cookieval() {
+  if (document.getElementById('cookiename').value.match('[^a-zA-Z]')) {
+    document.getElementById('cookiename').value = document.getElementById('cookiename').value.replace(/[^a-zA-Z]/g, "");
+  }
+}
+
+//submit cookie request
+function submitcookiename(sod) {
+  if (sod == 1) {
+    setcookie(document.getElementById('cookiename').value);
+  } else if (sod == 2) {
+    delcookie(document.getElementById('cookiename').value);
+  }
+}
+
+//toggle vis of cookieedit
+var viscook = false;
+
+function toggleviscook() {
+  if (viscook) {
+    document.getElementById('nameofcookie').style.display = "none";
+  } else {
+    document.getElementById('nameofcookie').style.display = "block";
   }
 }

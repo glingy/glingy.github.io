@@ -10,7 +10,9 @@
       <span>Presets: </span>
       <select id="preset" onchange="presetc()">
         <option value="0" selected>Blank</option>
-      </select><br>
+      </select>
+      <button onclick="toggleviscook()">Edit Saved Presets</button><br>
+      <div id="nameofcookie"><span>Enter cookie/preset name: </span><input id="cookiename" onchange="cookieval()" type="text"></input><button onclick="submitcookiename(1)">Save to Cookie</button><button onclick="submitcookiename(2)">Delete Cookie</button></div>
       <textarea autofocus="true" onclick="visinputbox(true)" cols="80" rows="10" id="input" placeholder="Enter text to make a fill-in-the-blanks test with."></textarea><br>
       <button onclick="createtest()">Create!</button>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of blanks: </span>
