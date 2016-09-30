@@ -23,8 +23,22 @@
       <input id="answers" type="checkbox"></input>
       <br>
       <div id="fitbt"></div><br>
-      <button onclick="submit(0)" id="submit">Check Answers</button>
-      <p>Created by Gregory Ling</p>
+      <button onclick="submit(0)" id="submit">Check Answers</button><button onclick="togglehelp()" id="helpb">Show Help</button>
+      <div id="help">
+        <ol>
+          <li>Enter the text you are trying to memorize or choose a preset if it is not already entered.</li>
+          <li>Then enter the number of blanks. It defaults to the maximum number of blanks. Ususally you want to start at a low number.</li>
+          <li>Click create.</li>
+          <li>Enter the correct characters (case sensitive) into the boxes, using the mouse or tab to advance.</li>
+          <li>When you think you're done, select "Show Answers" if you want it to and click "Check Answers".</li>
+          <li>If you messed up, fix mistakes and check again.</li>
+          <li>Repeat while increasing the number of blanks until the entire text is blanked.</li>
+          <li>You should now be able to remember it.</li>
+          <li>Celebrate!</li>
+          <li>I just wanted a tenth item...</li>
+        </ol>
+      </div>
+      <p class="credits">Created by Gregory Ling</p>
     </div>
     <script src="js/presets.js"></script>
   </body>

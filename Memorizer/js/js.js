@@ -289,3 +289,17 @@ function setgetpreset() {
     alert("The link exceeded the maximim guaranteed length. It should still work with most major browsers, but some older browsers may cut off some of the preset. Generally, this is nothing to worry about.");
   }
 }
+
+var help = 0;
+
+function togglehelp() {
+  if (help) {
+    document.getElementById("help").style.display = "none";
+    document.getElementById("helpb").innerHTML = "Show Help";
+    help = 0;
+  } else {
+    document.getElementById("help").style.display = "block";
+    document.getElementById("helpb").innerHTML = "Hide Help";
+    help = 1;
+  }
+}
