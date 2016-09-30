@@ -9,6 +9,10 @@ textarea {
   border: 1px solid rgba(64,64,0,0.4);
 }
 
+p {
+  font-size: x-small;
+}
+
 #nameofcookie, #urldiv {
   display: none;
 }
