@@ -312,4 +312,4 @@ function nohover() {
     buttons[i].classList.remove("hover");
   }
 }
-(document.addEventListener("touchstart", nohover);)
+(document.addEventListener("touchstart", nohover))
