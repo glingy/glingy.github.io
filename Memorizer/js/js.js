@@ -94,7 +94,7 @@ function submit(showw) {
   }
   for (var i = 0; i < blankcount; i++) {
     wo = document.getElementById('blank'+i);
-    entered[i] = wo.value;
+    entered[i] = wo.value.trim();
     if (wo.value == answerArray[i]) {
       wo.style.backgroundColor = '#00FF00';
     } else {
@@ -301,5 +301,14 @@ function togglehelp() {
     document.getElementById("help").style.display = "block";
     document.getElementById("helpb").innerHTML = "Hide Help";
     help = 1;
+  }
+}
+
+//fix hover on mobile devices
+
+function nohover() {
+  var buttons = document.getElementsByTagName("button");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("hover");
   }
 }
