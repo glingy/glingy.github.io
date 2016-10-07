@@ -183,7 +183,7 @@ function setcookie(name) {
   var name = name ? name : "CookiePreset";
   visinputbox(true);
   var pres = document.getElementById('input').value;
-  document.cookie = name + "=" + encodeURIComponent(pres) + " expired= ****************************************************** "  ;
+  document.cookie = name + "=" + encodeURIComponent(pres) + "; expires=Thu, 1 Jan 2111 00:00:00 UTC";
 }
 
 function delcookiep() {

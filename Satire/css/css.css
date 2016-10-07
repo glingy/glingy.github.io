@@ -49,3 +49,18 @@ ul {
     color: #000000;
     font-family: 'Droid Sans', sans-serif;
 }
+
+
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}
