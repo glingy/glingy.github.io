@@ -14,7 +14,7 @@ function alert(txt) {
   if (isNaN(txt) == isNaN("Hello")) {
     $("#innerAlert").html(txt);
   } else {
-    $("#innerAlert").html("Select " + txt + " donuts.");
+    $("#innerAlert").html("Select " + txt + " donut" + (txt == 1 ? "" : "s") + ".");
   }
 }
 
@@ -187,11 +187,13 @@ function init() {
   start();
 }
 
-var dnp = 0; // deal in progress
+var dnp = 0; // now to halt action
+var rdnp = 0; // real deal in progress
 
 function deal() {
-  alert("We will give you " + (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2) + " donuts. Deal or No Deal?");
-  dnp = 1;
+  var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
+  alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Deal or No Deal?");
+  rdnp = 1;
 }
 
 function finish() {
@@ -201,6 +203,7 @@ function finish() {
 }
 
 function animdntrev(adnt, test) { // animate donut reveal
+  dnp = 1;
   var h = 4 * isl;
   var l = (winw - 4*isl)/2;
   var t = (winh - 4*isl)/2;
@@ -219,7 +222,7 @@ function animdntrev(adnt, test) { // animate donut reveal
     duration: 3000,
     done: function() {
       $("#cd" + adnt + " span").html(value[adnt]);
-      alert(test == 1 ? "" + value[adnt] + " donuts!!!!!" : "Value: " + value[adnt] + " donuts.");
+      alert(test == 1 ? "" + value[adnt] + " donut" + (value[adnt] == 1 ? "" : "s") + "!!!!!" : "Value: " + value[adnt] + " donut" + (value[adnt] == 1 ? "" : "s") + ".");
 
       if (test !== 1) {
       deld(adnt);
@@ -250,7 +253,7 @@ function animdntrev(adnt, test) { // animate donut reveal
           } else {
             alert(selc);
           }
-
+          dnp = rdnp ? 1 : 0;
         //}, 3000);
       }, 3000);
       }
@@ -322,11 +325,17 @@ function key(e) {
         alert(selc);
       }, 2000);
       dnp = 0;
+      rdnp = 0;
     } else if (e.keyCode == 66){
-      alert("You won " + (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2) + " donuts!");
+      dnp = 1;
+      var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
+      alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
       dntsel = function(a) {return a;};
     }
   } else {
-    dntsel(caseapos[k]);
+    if (document.getElementById("cd" + caseapos[k]).style.display != "none") {
+      console.log(document.getElementById("cd" + caseapos[k]).style.display);
+      dntsel(caseapos[k]);
+    }
   }
 }
