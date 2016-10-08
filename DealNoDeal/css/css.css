@@ -1,0 +1,50 @@
+.cd {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  width: 0px;
+  /*cursor: pointer;*/
+}
+
+#alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 20px solid brown;
+  border-raduis: 20px;
+  border-image-source: url(../images/donut.png);
+  border-image-repeat: stretch;
+  border-image-slice: 49%;
+  z-index: 100;
+  background-color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#innerAlert {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.cd span {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 12px #FFFFFF;
+}
+
+.case {
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+}
+
+body {
+  cursor: none;
+}
