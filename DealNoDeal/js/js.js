@@ -243,7 +243,7 @@ function animdntrev(adnt, test) { // animate donut reveal
             alert(selc);
             deal();
             stage++;
-            if (stage == 4) {
+            if (stage == 5) {
               console.log("I know!!!!");
               finish();
             }
