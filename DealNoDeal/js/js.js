@@ -3,12 +3,15 @@ var calcvals = [];
 var caseapos = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; // which case is at position [__]?
 var winh = 0; // window height
 var winw = 0; // window width
-var xbw = 0;  // x separator width
+var xsw = 0;  // x separator width
 var isl = 0;  // image side length
 var ysh = 0;  // y separator height
+var off = 0;  // x left offset
 var selc = -2; // number of cases to select
 var chcse = -1; // chosen case
 var stage = 0; // what stage are we in? 0 --> choosing case, 1 --> 6, 2 --> 4, 3 --> 3, 4 --> 1, 5 --> reveal your case.
+
+
 
 function alert(txt) {
   if (isNaN(txt) == isNaN("Hello")) {
@@ -20,11 +23,12 @@ function alert(txt) {
 
 
 function resizeCalc() {
-  winw = window.innerWidth;
+  winw = window.innerWidth*0.8;
   winh = window.innerHeight*0.9;
   ysh = winh * 0.05;
   isl = (winh * 0.75)/4;
   xsw = (winw - (4 * isl))/5;
+  off = window.innerWidth * 0.1;
 }
 
 function resizeView() {
@@ -37,13 +41,14 @@ function resizeView() {
     obj.style.height = isl;
     obj.style.width = isl;
     tmp = i%4;
-    obj.style.left = (xsw * ((tmp)+1)) + (isl * (tmp));
+    obj.style.left = (xsw * ((tmp)+1)) + (isl * (tmp)) + off;
     tmp = Math.floor(i/4);
     obj.style.top  = (ysh * ((tmp)+1)) + (isl * (tmp));
     obj.style.fontSize = isl * 0.75;
     obj.children[0].children[0].style.textShadow = "0px 0px "+ (winh/55) + (chcse == casenum ? "px #00FF00" : "px #FFFFFF");
   }
   obj = document.getElementById("alert").style;
+  winw = window.innerWidth;
   var bw = (window.innerHeight*0.2)/10;
   obj.height = window.innerHeight*0.1 - bw;
   obj.width  = winw-2*bw;
@@ -54,6 +59,19 @@ function resizeView() {
   obj = document.getElementById("innerAlert").style;
   obj.top = (window.innerHeight*0.1 - 6*bw)/2;
   obj.width = winw - 2*bw;
+  bw /= 2;
+  for (var i = 0; i < 16; i++) {
+    obj = document.getElementById("l" + (i+1));
+    obj.style.width = xsw*1.6;
+    obj.style.left = i < 8 ? xsw*0.1 : window.innerWidth-(xsw*1.6)-(xsw*0.1)-(2*bw);
+    tmp = winh/17;
+    obj.style.top = (((i%8)+1)*2-1)*tmp - tmp/2;
+    obj.style.height = tmp*1.5;
+    obj.style.borderWidth = bw;
+    obj.style.fontSize = bw*10;
+    obj.children[0].innerHTML = value[i];
+    obj.style.opacity = document.getElementById("cd" + i).style.display == "none" ? "0.2" : "1";
+  }
 }
 
 function resize() {
@@ -72,10 +90,6 @@ function start() {
   for (var i = 0; i < 16; i++) {
     $("#cd" + (caseapos[i]) + " span").html(value[caseapos[i]]);
   }
-  setTimeout(function() {
-  alert("Follow the donuts...");
-  setTimeout(mix, 2000);
-  }, 2000);
 }
 
 
@@ -102,7 +116,7 @@ function finished() {
 function anim() {
   for (var i = 0; i < 16; i++) {
     casenum = caseapos[i];
-    var left = ((xsw * ((i%4)+1)) + (isl * (i%4))) + "px";
+    var left = ((xsw * ((i%4)+1)) + (isl * (i%4))+off) + "px";
     var tmp = Math.floor(i/4);
     var top  = ((ysh * ((tmp)+1)) + (isl * (tmp))) + "px";
     $("#cd" + casenum).animate({
@@ -174,7 +188,7 @@ var moves = [hswap, vswap, rspcl, rspccl, rcl, rccl];
 
 function mix() {
   $(".cd span").html("");
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 75; i++) {
     moves[Math.floor(Math.random() * 6)]();
   }
   $("#cd1").animate({left: "-=0px"}, {done: finished});
@@ -199,8 +213,18 @@ function deal() {
 function finish() {
   alert("You won...");
   animdntrev(chcse, 1);
+  for (var i = 0; i < 16; i++) {
+    if (document.getElementById("cd" + i).style.display == "none") {
+      if (i != chcse) {
+        document.getElementById("cd" + i).style.display = "none";
+        document.getElementById("l" + i).style.opacity = "0.2";
+      }
+    }
+  }
   dntsel = function(a) {return a;};
 }
+
+var finishh = 0;
 
 function animdntrev(adnt, test) { // animate donut reveal
   dnp = 1;
@@ -248,11 +272,12 @@ function animdntrev(adnt, test) { // animate donut reveal
             stage++;
             if (stage == 5) {
               console.log("I know!!!!");
-              finish();
+              finishh = 1;
             }
           } else {
             alert(selc);
           }
+          resize();
           dnp = rdnp ? 1 : 0;
         //}, 3000);
       }, 3000);
@@ -321,9 +346,13 @@ function key(e) {
   if (k == -1) {
     if (e.keyCode == 78) {
       alert("No Deal.");
-      setTimeout(function() {
-        alert(selc);
-      }, 2000);
+      if (!finishh) {
+        setTimeout(function() {
+          alert(selc);
+        }, 2000);
+      } else {
+        finish();
+      }
       dnp = 0;
       rdnp = 0;
     } else if (e.keyCode == 66){
@@ -331,6 +360,9 @@ function key(e) {
       var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
       alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
       dntsel = function(a) {return a;};
+    } else if (e.keyCode == 32) {
+      alert("Follow the donuts...");
+      setTimeout(mix, 2000);
     }
   } else {
     if (document.getElementById("cd" + caseapos[k]).style.display != "none") {
