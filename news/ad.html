@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel="shortcut icon" href="/favicon.ico">
 		<title>Advertisement</title>
 		<style>
 			div {
@@ -21,7 +22,7 @@
 		</style>
 		<script>
 			function showfirst() {
-			  var elem = document.getElementById("firsttext");   
+			  var elem = document.getElementById("firsttext");
 			  var scale = 0;
 			  var rot = 0;
 			  var id = setInterval(frame, 5);
@@ -30,16 +31,16 @@
 			      clearInterval(id);
 			      setTimeout(showsecond, 1000);
 			    } else {
-			      scale += 0.01; 
+			      scale += 0.01;
 			      rot += 3.6;
-			      elem.style.WebkitTransform = 'rotate(' + rot + 'deg) scale(' + scale + ', ' + scale + ')'; 
-			      elem.style.Transform = 'rotate(' + rot + 'deg) scale(' + scale + ', ' + scale + ')'; 
+			      elem.style.WebkitTransform = 'rotate(' + rot + 'deg) scale(' + scale + ', ' + scale + ')';
+			      elem.style.Transform = 'rotate(' + rot + 'deg) scale(' + scale + ', ' + scale + ')';
 			    }
 			  }
 			}
 
 			function showsecond() {
-			  var elem = document.getElementById("secondtext");   
+			  var elem = document.getElementById("secondtext");
 			  var scale = 0;
 			  var amount = 0.02;
 			  elem.style.display = "block";
@@ -49,15 +50,15 @@
 			      clearInterval(id);
 			      showthird();
 			    } else {
-			      scale += amount; 
-			      elem.style.WebkitTransform = 'scale(' + scale + ', ' + scale + ')'; 
-			      elem.style.Transform = 'scale(' + scale + ', ' + scale + ')'; 
+			      scale += amount;
+			      elem.style.WebkitTransform = 'scale(' + scale + ', ' + scale + ')';
+			      elem.style.Transform = 'scale(' + scale + ', ' + scale + ')';
 			    }
 			  }
 			}
 
 			function showthird() {
-			  var elem = document.getElementById("secondtext");   
+			  var elem = document.getElementById("secondtext");
 			  var scale = 1.5;
 			  var amount = 0.02;
 			  var id = setInterval(frame, 5);
@@ -66,9 +67,9 @@
 			      clearInterval(id);
 			      document.getElementById("yearly").style.display = "block";
 			    } else {
-			      scale -= amount; 
-			      elem.style.WebkitTransform = 'scale(' + scale + ', ' + scale + ')'; 
-			      elem.style.Transform = 'scale(' + scale + ', ' + scale + ')'; 
+			      scale -= amount;
+			      elem.style.WebkitTransform = 'scale(' + scale + ', ' + scale + ')';
+			      elem.style.Transform = 'scale(' + scale + ', ' + scale + ')';
 			    }
 			  }
 			}
