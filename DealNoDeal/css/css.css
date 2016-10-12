@@ -4,7 +4,6 @@
   top: 0px;
   height: 0px;
   width: 0px;
-  cursor: pointer;
 }
 
 #alert {
@@ -72,5 +71,5 @@
 }
 
 body {
-  /*cursor: none;*/
+  cursor: none;
 }
