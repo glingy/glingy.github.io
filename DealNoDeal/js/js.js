@@ -10,7 +10,7 @@ var off = 0;  // x left offset
 var selc = -2; // number of cases to select
 var chcse = -1; // chosen case
 var stage = 0; // what stage are we in? 0 --> choosing case, 1 --> 6, 2 --> 4, 3 --> 3, 4 --> 1, 5 --> reveal your case.
-
+var start = 0;
 
 
 function alert(txt) {
@@ -360,7 +360,8 @@ function key(e) {
       var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
       alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
       dntsel = function(a) {return a;};
-    } else if (e.keyCode == 32) {
+    } else if (e.keyCode == 32 && !start) {
+      start = 1;
       alert("Follow the donuts...");
       setTimeout(mix, 2000);
     }
