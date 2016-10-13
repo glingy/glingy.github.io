@@ -297,7 +297,7 @@ function animdntrev(adnt, test) { // animate donut reveal
 }
 
 function deld(rdnt) { // delete donut
-  calcvals.splice(rdnt,1);
+  calcvals.splice(calcvals.indexOf(value[rdnt]),1);
   //caseapos[caseapos.indexOf(rdnt)] = undefined;
 }
 
