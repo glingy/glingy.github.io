@@ -206,7 +206,7 @@ var rdnp = 0; // real deal in progress
 var dealw = 0;
 function deal() {
   var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
-  alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Deal or No Deal?");
+  alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Donut or No Donut?");
   rdnp = 1;
 }
 
@@ -346,7 +346,7 @@ function key(e) {
   console.log(e);
   if (k == -1) {
     if (e.keyCode == 78) {
-      alert("No Deal.");
+      alert("No Donut.");
       if (!finishh) {
         setTimeout(function() {
           alert(selc);
