@@ -203,7 +203,7 @@ function init() {
 
 var dnp = 0; // now to halt action
 var rdnp = 0; // real deal in progress
-
+var dealw = 0;
 function deal() {
   var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
   alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Deal or No Deal?");
@@ -268,7 +268,8 @@ function animdntrev(adnt, test) { // animate donut reveal
           if (selc == 0) {
             selc = (stage == 1 ? 4 : (stage == 2 ? 3 : 1));
             alert(selc);
-            deal();
+            dealw = 1;
+            alert("Calling the baker...");
             stage++;
             if (stage == 5) {
               console.log("I know!!!!");
@@ -366,6 +367,8 @@ function key(e) {
       setTimeout(mix, 2000);
     } else if (e.keyCode == 71) {
       document.body.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    } else if (e.keyCode == 32 && dealw) {
+      deal();
     }
   } else {
     if (document.getElementById("cd" + caseapos[k]).style.display != "none") {
