@@ -364,6 +364,8 @@ function key(e) {
       startt = 1;
       alert("Follow the donuts...");
       setTimeout(mix, 2000);
+    } else if (e.keyCode == 71) {
+      document.body.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
     }
   } else {
     if (document.getElementById("cd" + caseapos[k]).style.display != "none") {

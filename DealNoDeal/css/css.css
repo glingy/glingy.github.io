@@ -70,6 +70,18 @@
   z-index: -100;
 }
 
+#fscrn {
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+
+}
+
+
 body {
   cursor: none;
+  background-color: #FFFFFF;
 }
