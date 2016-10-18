@@ -11,7 +11,7 @@ var selc = -2; // number of cases to select
 var chcse = -1; // chosen case
 var stage = 0; // what stage are we in? 0 --> choosing case, 1 --> 6, 2 --> 4, 3 --> 3, 4 --> 1, 5 --> reveal your case.
 var startt = 0;
-
+var done = 0;
 
 function alert(txt) {
   if (isNaN(txt) == isNaN("Hello")) {
