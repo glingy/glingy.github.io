@@ -208,6 +208,7 @@ function deal() {
   var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
   alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Donut or No Donut?");
   rdnp = 1;
+  dealw = 0;
 }
 
 function finish() {
