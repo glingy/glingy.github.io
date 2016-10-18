@@ -329,7 +329,7 @@ function dntsel(dnt) {
     //document.getElementById("cd" + (caseapos[dnt])).style.backgroundColor = "#00FF00";
     chcse = caseapos[dnt];
     resize();
-    deld(dnt);
+    //deld(dnt);
     //caseapos[dnt] = undefined;
     selc = 6;
     alert("Now select 6 donuts.");
