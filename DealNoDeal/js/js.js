@@ -346,7 +346,7 @@ function key(e) {
   console.log("" + k + ", " + e.keyCode);
   console.log(e);
   if (k == -1) {
-    if (e.keyCode == 78) {
+    if (e.keyCode == 78 && rdnp) {
       alert("No Donut.");
       if (!finishh) {
         setTimeout(function() {
@@ -357,11 +357,12 @@ function key(e) {
       }
       dnp = 0;
       rdnp = 0;
-    } else if (e.keyCode == 66){
+    } else if (e.keyCode == 66 && rdnp){
       dnp = 1;
       var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
       alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
       dntsel = function(a) {return a;};
+      rdnp = 1;
     } else if (e.keyCode == 32 && startt === 0) {
       startt = 1;
       alert("Follow the donuts...");
