@@ -309,6 +309,9 @@ function anr(dnt, test) {// announce and remove
 
 
 function dntsel(dnt) {
+  if (done == 1) {
+    return 0;
+  }
   console.log(caseapos);
   console.log(value);
   console.log(dnt);
@@ -342,6 +345,7 @@ var keys = [49,50,51,52,81,87,69,82,65,83,68,70,90,88,67,86];
 
 
 function key(e) {
+  if (done == 1) {return 0;}
   var k = keys.indexOf(e.keyCode);
   console.log("" + k + ", " + e.keyCode);
   console.log(e);
@@ -361,7 +365,7 @@ function key(e) {
       dnp = 1;
       var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
       alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
-      dntsel = function(a) {return a;};
+      done = 1;
       rdnp = 1;
     } else if (e.keyCode == 32 && startt === 0) {
       startt = 1;
