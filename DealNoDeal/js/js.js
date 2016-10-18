@@ -269,6 +269,7 @@ function animdntrev(adnt, test) { // animate donut reveal
             selc = (stage == 1 ? 4 : (stage == 2 ? 3 : 1));
             alert(selc);
             dealw = 1;
+            rdnp = 1;
             alert("Calling the baker...");
             stage++;
             if (stage == 5) {
