@@ -204,6 +204,7 @@ function init() {
 var dnp = 0; // now to halt action
 var rdnp = 0; // real deal in progress
 var dealw = 0;
+var dealc = 0; // dealcontinue
 function deal() {
   var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
   alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Donut or No Donut?");
@@ -366,8 +367,9 @@ function key(e) {
       dnp = 1;
       var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
       alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
-      done = 1;
+      //done = 1;
       rdnp = 1;
+      dealc = 1;
     } else if (e.keyCode == 32 && startt === 0) {
       startt = 1;
       alert("Follow the donuts...");
@@ -376,6 +378,15 @@ function key(e) {
       document.body.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
     } else if (e.keyCode == 32 && dealw) {
       deal();
+    } else if (e.keyCode == 32 && dealc) {
+      dealc = 0;
+      if (!finishh) {
+          alert(selc);
+       } else {
+        finish();
+      }
+      dnp = 0;
+      rdnp = 0;
     }
   } else {
     if (document.getElementById("cd" + caseapos[k]).style.display != "none") {
