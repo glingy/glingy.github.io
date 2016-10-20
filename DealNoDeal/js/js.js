@@ -205,6 +205,7 @@ var dnp = 0; // now to halt action
 var rdnp = 0; // real deal in progress
 var dealw = 0;
 var dealc = 0; // dealcontinue
+var cont = 0;
 function deal() {
   var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
   alert("We will give you " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + ". Donut or No Donut?");
@@ -213,7 +214,7 @@ function deal() {
 }
 
 function finish() {
-  alert("You won...");
+  alert("You " + (cont? "would have " : "") + "won...");
   animdntrev(chcse, 1);
   for (var i = 0; i < 16; i++) {
     if (document.getElementById("cd" + i).style.display == "none") {
@@ -366,7 +367,7 @@ function key(e) {
     } else if (e.keyCode == 66 && rdnp){
       dnp = 1;
       var tmppp = (Math.floor(2*((calcvals.reduce(function(a,b) {return a+b;}, 0)/calcvals.length)))/2);
-      alert("You won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
+      alert("You " + (cont? "would have " : "") + "won " + tmppp + " donut" + (tmppp == 1 ? "" : "s") + "!");
       //done = 1;
       rdnp = 1;
       dealc = 1;
@@ -385,6 +386,7 @@ function key(e) {
        } else {
         finish();
       }
+      cont = 1;
       dnp = 0;
       rdnp = 0;
     }
