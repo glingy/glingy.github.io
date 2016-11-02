@@ -4,9 +4,9 @@ var cmoney = 600;
 var cplva = [0, 0, 0, 0];
 var tplva = [0, 0, 0, 0];
 var turnlost = 0;
+include("keys.js");
 include("puzzles.js")
 include("spinner.js");
-include("keys.js");
 include("letter.js");
 
 function rvltoc(t) {

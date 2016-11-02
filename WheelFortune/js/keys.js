@@ -12,7 +12,7 @@ function key(e) {
     console.log(pl);
     document.getElementById("p"+cpl).style.boxShadow = "5px 5px 15px black";
     document.getElementById("p"+pl).style.boxShadow = "-5px -5px 15px white";
-    cpl = pl;
+    cpl = parseInt(pl, 10);
   } else if (e.which == 13) {
     console.log("start/stop");
     if (spinning) {
