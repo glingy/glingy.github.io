@@ -30,5 +30,7 @@ function key(e) {
     rvltoc(0);
   } else if (String.fromCharCode(e.which) == "8") {
     showSpinner();
+  } else if (String.fromCharCode(e.which) == "=") {
+    gel("bigcont").webkitRequestFullScreen();
   }
 }
