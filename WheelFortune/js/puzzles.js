@@ -1,7 +1,7 @@
 var puzzles = [
        /*1111111111112222222222222233333333333333444444444444*/
-  {"pz":"              A  FOREIGN     LANGUAGE               ", "ct": "Thing"},
-  {"pz":"      A     HARD-AND-FAST      RULE                 ", "ct": "Thing"},
+  {"pz":"                BUILD         A WALL                ", "ct": "Trump"},
+  {"pz":"             MAKE AMERICA  GREAT AGAIN              ", "ct": "Thing"},
   {"pz":"               A  CLEAN        SWEEP                ", "ct": "Phrase"}];
 
 
