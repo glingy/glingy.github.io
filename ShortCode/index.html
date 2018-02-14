@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>ShortCode Entry</title>
+        <script>
+            function submit() {
+                document.getElementById("tarea").value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <p>Enter ShortCode, then submit.</p>
+        <form target="framee" action="https://maker.ifttt.com/trigger/scouting/with/key/cUkM5LZ0R-P-tG7vmyIKXL" method="post">
+            <input id="tarea" name="value1" type="text" placeholder="GL7854-010012430410"></input><br>
+            <button type="submit">Submit</button>
+        </form>        
+        <iframe name="framee" style="display: none" onload="submit()"></iframe>
+    </body>
+</html>
