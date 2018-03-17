@@ -24,9 +24,23 @@
       }
 
       var current;
+      var waitingToReset = false;
       function neww() {
+        if (chosen.length == 0) {
+          document.getElementById("feedback").innerHTML = "";
+          document.getElementById("feedbackholder").style.backgroundColor = "#FFF";
+          if (current !== undefined && waitingToReset == false) {
+            document.getElementById("feedback").innerHTML = "Click to restart.";
+            document.getElementById("feedbackholder").style.backgroundColor = "#4F4";
+            waitingToReset = true;
+            return;
+          }
+          chosen = (new Array(NAMES.length / 2)).fill(0).map((el, i) => {return i});
+          waitingToReset = false;
+        }
+
         document.getElementById("input").value = "";
-        var currentIdx = Math.floor(Math.random() * (NAMES.length/2));
+        var currentIdx = chosen.splice(Math.floor(Math.random() * chosen.length), 1);
         current = NAMES[1 + (currentIdx * 2)].indexOf("O") == -1 ? "Hydro" + NAMES[currentIdx*2].toLowerCase() + " Acid" : NAMES[currentIdx * 2] + " Acid";
         document.getElementById("acid").innerHTML = "H" + (currentIdx < 16 ? "" : currentIdx < 23 ? "2" : "3") + NAMES[1 + (currentIdx * 2)];
       }
@@ -50,11 +64,17 @@
       }
 
       function reveal() {
+        if (waitingToReset) {
+          neww();
+          waitingToReset = false;
+          return;
+        }
         if (lastScore == 0) {
           document.getElementById("feedback").innerHTML = document.getElementById("acid").innerHTML + " is " + current;
         }
       }
 
+      var chosen = [];
 
       var NAMES = [
         "Acetic", "C2H3O2", //Begin -1 (0)
@@ -80,7 +100,6 @@
         "Sulfuric", "SO3",
         "Thiosulfuric", "S2O3",
         "Arsenic", "AsO4", // -3 (22)
-        "Nitric", "N",
         "Phosphoric", "PO4",
         "Phosphorous", "PO3"];
 
