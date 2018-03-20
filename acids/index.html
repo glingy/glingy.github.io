@@ -2,13 +2,51 @@
   <head>
     <title>Acid Naming Quiz</title>
     <meta charset="utf-8"/>
+    <link href="../main.css" rel="stylesheet" type="text/css"/>
   </head>
   <body onload="neww()" onkeydown="key(event)">
-    <div>
+    <ul class="nav">
+  		<li><a class="active" href="../index.html">Home</a></li>
+  		<li class="dropdown">
+				<a href="#" class="dropbtn">Games</a>
+				<div class="dropdown-content">
+      		<a href="https://glingy.github.io/GNibbles/index.html">Nibbles</a>
+      		<a href="../donut/index.html">Donut or No Donut</a>
+      		<a href="../pong/index.html">Pong</a>
+					<a href="../wheelFortune/index.html">Wheel of Fortune</a>
+					<a href="https://github.com/glingy/Ionic-Gin">Ionic Gin</a>
+    		</div>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">Tools</a>
+				<div class="dropdown-content">
+      		<a href="../memorizer/index.html">Memorizer</a>
+      		<a href="../acids/index.html">Acid Names</a>
+      		<a href="../shortCode/index.html">Short Code</a>
+					<a href="../schwdgt/index.html">Schedule Widget</a>
+    		</div>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">Projects</a>
+				<div class="dropdown-content">
+      		<a href="../news/index.html">News</a>
+					<a href="../satire/index.html">Computational Satire</a>
+    		</div>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">Other</a>
+				<div class="dropdown-content">
+      		<a href="#">Nothing Here...</a>
+    		</div>
+			</li>
+		</ul>
+    <div class="outerContent">
+      <div class="content">
       <div><span id="acid"></span></div>
       <input id="input" type="text" placeholder="Enter Name Here" autocomplete="false" spellcheck="false"></input>
       <button id="check" onclick="check()">Check</button><button id="new" onclick="neww()">Next</button>
       <div id="feedbackholder" onclick="reveal()"><span id="feedback"></span></div>
+    </div>
     </div>
     <script>
       var lastScore = 1;
@@ -46,19 +84,20 @@
       }
 
       function check() {
+        document.getElementById("feedbackholder").style.visibility = "visible";
         document.getElementById("feedback").innerHTML = "" + document.getElementById("acid").innerHTML + ": " + document.getElementById("input").value;
         if (document.getElementById("input").value.toLowerCase() == current.toLowerCase()) {
           document.getElementById("feedback").innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;✅";
-          document.getElementById("feedbackholder").style.backgroundColor = "#4F4";
+          document.getElementById("feedbackholder").style.backgroundColor = "#030";
           lastScore = 1;
           neww();
         } else if (levDist(document.getElementById("input").value.toLowerCase(), current.toLowerCase()) <= 2) {
           document.getElementById("feedback").innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;Spelling";
-          document.getElementById("feedbackholder").style.backgroundColor = "#FF0";
+          document.getElementById("feedbackholder").style.backgroundColor = "#330";
           lastScore = 0;
         } else {
           document.getElementById("feedback").innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;Incorrect";
-          document.getElementById("feedbackholder").style.backgroundColor = "#F80";
+          document.getElementById("feedbackholder").style.backgroundColor = "#300";
           lastScore = 0;
         }
       }
@@ -96,8 +135,8 @@
         "Chromic", "CrO4",
         "Dichromic", "Cr2O7",
         "Sulfuric", "S",
-        "Sulfurous", "SO2",
-        "Sulfuric", "SO3",
+        "Sulfurous", "SO3",
+        "Sulfuric", "SO4",
         "Thiosulfuric", "S2O3",
         "Arsenic", "AsO4", // -3 (22)
         "Phosphoric", "PO4",
@@ -133,22 +172,17 @@
 
     </script>
     <style>
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
 
-      body > div {
+      .content {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-flow: row wrap;
-        width: 300px;
+        width: 350px;
         height: 100px;
       }
 
-      body > div div {
+      .content div {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -165,6 +199,7 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        visibility: hidden;
       }
 
 

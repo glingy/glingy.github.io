@@ -96,9 +96,9 @@ function submit(showw) {
     wo = document.getElementById('blank'+i);
     entered[i] = wo.value.trim();
     if (wo.value == answerArray[i]) {
-      wo.style.backgroundColor = '#00FF00';
+      wo.style.backgroundColor = '#003300';
     } else {
-      wo.style.backgroundColor = '#FF0000';
+      wo.style.backgroundColor = '#330000';
       wrongcount++;
       if (show) {
         testwans[positionArray[i]+1] = "<span class='correct'><mark>" + answerArray[i] + "</mark></span>" + (testwans[positionArray[i]+1] ? testwans[positionArray[i]+1] : "");

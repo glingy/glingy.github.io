@@ -3,13 +3,10 @@
 }
 
 #game {
-  position: absolute;
+  position: relative;
   width: 800px;
   height: 600px;
   overflow: hidden;
-  top: auto;
-  bottom: auto;
-  margin: auto;
 }
 
 #plyr2 {

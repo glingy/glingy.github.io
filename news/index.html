@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<title>The Silicon Penguin | Home</title>
-		<link rel="shortcut icon" href="/favicon.ico">
 		<style>
 			body {
 				// thanks to w3schools for this part
@@ -19,6 +18,7 @@
   				margin-left: auto;
   				margin-right: auto;
   				margin-bottom:40px;
+					margin-top: 40px;
   				border-radius:25px;
   				padding: 20px;
   				color: #000000;
@@ -49,8 +49,6 @@
 		<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div class="overhang"> <style> .maindiv {margin-top: 10%;} .overhang { font-family: 'Droid Sans', sans-serif; margin: 0px; border: 0px; position: absolute; left: 0px; top: 0px; background-color:rgba(192,192,256,0.5); width: 100%; background: -webkit-linear-gradient(rgba(192,192,256,0.9), rgba(192,192,256,0.5)); /* Safari 5.1 to 6.0 */ background: -o-linear-gradient(rgba(192,192,256,0.9), rgba(192,192,256,0.5)); /* For Opera 11.6 to 12.0 */ background: -moz-linear-gradient(rgba(192,192,256,0.9), rgba(192,192,256,0.5)); /* For Firefox 3.6 to 15 */ background: linear-gradient(rgba(192,192,256,0.9), rgba(192,192,256,0.5)); /* Standard syntax */ height: 10%; }#overhg { width: 100%; height: 100%; table-layout: fixed; font-size: 150%; border-collapse: collapse; /*vertical-align: middle;*/ } #overhg tr { /*vertical-align: middle;*/ text-align: center; height: 100%;} #overhg div:not(.ovhtab div, .ovhtab) { display: inline-block; padding-left: 10px; padding-right: 10px; background-color:rgba(192,192,256,1); border: 3px solid rgba(192,192,256,1); border-radius: 20px; cursor: pointer; } #overhg div:not(.ovhtab div, .ovhtab):hover{ background-color:rgba(0, 0, 0, 0.0); }#overhg a { text-decoration: none; color: black; } .ovhtab { display: none; position: absolute; width: 25%; background-image: linear-gradient(to bottom, rgba(192,192,256,0.5) 0px, rgba(192,192,256, 0.9) 20%, rgba(192,192,256, 1) 40%); border-radius: 0px 0px 20px 20px; text-align: center; font-size: initial; top: 100%; } .ovhtab hr { margin-left: 5%; margin-right: 5%; color: blue; } .ovhtab div { display: inline-block; padding-left: 10px; padding-right: 10px; background-color:rgba(192,192,256,1); border: 3px solid rgba(0, 0, 64,0.2); border-radius: 20px; cursor: pointer; } .ovhtab div:hover { background-color:rgb(128, 128, 256); } #Games { left: 25%; } #Tools { left: 50%; } #School { left: 75%; } hr { display: block; height: 1px; border: 0; border-top: 1px solid blue; margin: 1em 0; padding: 0; } </style> <script> function ovhang(which, on) { console.log(on); if (which == "Home") { location.href = "../index.html"; } else { document.getElementById(which).style.display = on ? "block" : "none"; } } </script> <table id="overhg"> <tr> <td><div                                   onclick="ovhang('Home', 1);">Home</div></td> <td onmouseleave="ovhang('Games', 0);" ><div onmouseenter="ovhang('Games', 1);">Games</div> <div id="Games" class="ovhtab"> <br> <div><a href="../pong/index.html">PONG PROJECT</a></div> <hr> <div><a href="../DealNoDeal/index.html">Donut or No Donut</a></div><br> <br> </div> </td><td onmouseleave="ovhang('Tools', 0);" ><div onmouseenter="ovhang('Tools', 1);">Tools</div> <div id="Tools" onmouseenter="ovhang('Tools', 1);" class="ovhtab"> <br> <div><a href="../Memorizer/index.html">Memorization Helper</a></div> <hr> <div><a href="../Schwdgt/index.html">TKA Schedule Widget</a></div> <br><br></div></td><td onmouseleave="ovhang('School', 0);"><div onmouseenter="ovhang('School', 1);">School Projects</div><div id="School" onmouseenter="ovhang('School', 1);" class="ovhtab"><br><div><a href="../news/index.html">NEWS PROJECT</a></div><hr><div><a href="../Satire/index.html">Computational Satire</a></div><br><br></div></td></tr></table></div>
-
 		<div class="maindiv">
 			<h1 align='center'>The Silicon Penguin</h1>
 			<p align="center">Your source for yearly news stories</p>

@@ -6,51 +6,9 @@ mark {
   background-color: #00FF00;
 }
 
-body {
-  /* thanks to w3schools for this part*/
-  background: blue; /* For browsers that do not support gradients */
-    background: -webkit-radial-gradient(#00FFFF, blue); /* Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(#00FFFF, blue); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(#00FFFF, blue); /* For Firefox 3.6 to 15 */
-    background: radial-gradient(#00FFFF, blue); /* Standard syntax */
-
-}
-
 #hint {
   opacity: 0;
 }
-
-
-ul {
-  text-align: left;
-}
-
-.maindiv {
-  opacity: 50%;
-    background-color:rgba(192,192,256,0.5);
-    width:700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom:40px;
-    border-radius:25px;
-    padding: 20px;
-    color: #000000;
-    font-family: 'Droid Sans', sans-serif;
-  }
-.secdiv {
-  opacity: 50%;
-    background-color:rgba(192,192,256,0.5);
-    width:500px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom:40px;
-    border-radius:25px;
-    padding: 20px;
-    color: #000000;
-    font-family: 'Droid Sans', sans-serif;
-}
-
-
 
 .left {
   text-align: left;
