@@ -106,10 +106,6 @@ input, textarea {
   font-size: 0.9em;
 }
 
-img {
-  filter: invert(100%);
-}
-
 .inner {
   background-color: #2E2E2E;
   border-radius: 10px;
