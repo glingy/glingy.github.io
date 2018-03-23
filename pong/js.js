@@ -335,7 +335,7 @@ function init() {
   });
 }
 
-$(document).ready(function() {
+function start() {
   document.getElementById('opening').focus();
   init();
-});
+};
