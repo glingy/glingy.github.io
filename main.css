@@ -126,7 +126,12 @@ div.outerContent {
 }
 
 div.content {
+  width: 100%;
   text-align: center;
+}
+
+div.outerContent > div.content {
+  width: auto;
 }
 
 div.content p {
@@ -151,7 +156,7 @@ input, textarea {
 .inner {
   background-color: #2E2E2E;
   border-radius: 10px;
-  width: 50vw;
+  width: 50%;
   margin: 40px auto;
   padding: 10px;
 
