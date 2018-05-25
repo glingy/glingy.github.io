@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Pixel Draw</title>
+    <link href="main.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id="scrollWrapper">
+      <div id="drawWrapper"><canvas id="draw" height="72" width="72"></canvas><div id="grid"></div><canvas id="overlay" height="72" width="72"></canvas></div>
+      <canvas id="eraseLayer" height="24" width="24" style="display: none;"></canvas>
+    </div>
+  <canvas id="preview" height="24" width="24" class="draggable"></canvas>
+  <div id="toolbar" class="draggable"></div>
+  <div id="colors" class="draggable">
+    <div id="picker">
+      <input oninput="Colors.input(event, this)" id="redInput" type="range" value="0" min="0" max="255" step="1"></input>
+      <input oninput="Colors.input(event, this)" id="greenInput" type="range" value="0" min="0" max="255" step="1"></input>
+      <input oninput="Colors.input(event, this)" id="blueInput" type="range" value="0" min="0" max="255" step="1"></input>
+      <input oninput="Colors.input(event, this)" onchange="Colors.update()" id="colorInput" type="color" value="#000000" spellcheck="false"></input>
+    </div>
+    <div id="paletteHolder"><div id="palette"></div></div>
+  </div>
+  <div id="helpHolder" class="draggable"><div id="help"></div><div class="buttons"><div class="button" onclick="this.parentElement.parentElement.classList.remove('visible')">Hide</div></div></div>
+  <div id="notifications"></div>
+    <script src="js/main.js"></script>
+    <script src="js/Tools.js"></script>
+    <script src="js/ToolManager.js"></script>
+    <script src="js/Colors.js"></script>
+    <script src="js/Init.js"></script>
+  </body>
+</html>

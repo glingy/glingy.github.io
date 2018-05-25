@@ -27,6 +27,7 @@ void((() => {
         <a href='../acids/index.html'>Acid Names</a> \
         <a href='../shortCode/index.html'>Short Code</a> \
         <a href='../schwdgt/index.html'>Schedule Widget</a> \
+        <a href='../pixel/index.html'>Pixel Draw</a> \
       </div> \
     </li> \
     <li class='dropdown'> \
