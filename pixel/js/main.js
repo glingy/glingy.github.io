@@ -3,7 +3,8 @@ let min = (a, b) => a < b ? a : b;
 let max = (a, b) => a > b ? a : b;
 let inc = v => v + 1 > 23 ? 0 : v + 1;
 let dec = v => v - 1 < 0 ? 23 : v - 1;
-
+Element.prototype.getBoundx = function () {return this.getBoundingClientRect().x ? this.getBoundingClientRect().x : this.getBoundingClientRect().left}
+Element.prototype.getBoundy = function () {return this.getBoundingClientRect().y ? this.getBoundingClientRect().y : this.getBoundingClientRect().top}
 let getCookie = name => (document.cookie.split("; ").filter(str => str.startsWith(name))[0] || "=").split("=")[1]
 let getCookies = start => (document.cookie.split("; ").filter(str => str.startsWith(start)))
 let setCookie = (name, value) => {document.cookie = name + "=" + value}
@@ -69,8 +70,8 @@ let Drag = {
   },
   end(e) {
     if (e.target.classList.contains("draggable")) {
-      var percentageX = range((this.element.getBoundingClientRect().x / (this.docWidth - this.width)), 0, 1);
-      var percentageY = range((this.element.getBoundingClientRect().y / (this.docHeight - this.height)), 0, 1);
+      var percentageX = range((this.element.getBoundx() / (this.docWidth - this.width)), 0, 1);
+      var percentageY = range((this.element.getBoundy() / (this.docHeight - this.height)), 0, 1);
 
       this.element.style.left = "calc(" + (percentageX * 100) + "% - " + (percentageX * this.width) + "px)";
       this.element.style.top = "calc(" + (percentageY * 100) + "% - " + (percentageY * this.height) + "px)";
