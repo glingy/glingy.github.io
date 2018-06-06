@@ -17,7 +17,7 @@
   height: 100px;
   width: 20px;
   background-color: #00FFF0;
-  z-index: 12;
+  z-index: 2;
 }
 
 #plyr1 {
@@ -27,7 +27,7 @@
   height: 100px;
   width: 20px;
   background-color: #00FFF0;
-  z-index: 12;
+  z-index: 2;
 }
 
 img {
@@ -45,7 +45,7 @@ img {
   width: 20px;
   border-radius: 10px;
   background-color: #00FFFF;
-  z-index: 13;
+  z-index: 2;
 }
 
 #p2score {
@@ -78,5 +78,5 @@ img {
   top: auto;
   bottom: auto;
   margin: auto;
-  z-index: 15;
+  z-index: 3;
 }

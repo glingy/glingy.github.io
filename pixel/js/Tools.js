@@ -234,7 +234,52 @@ var Tools = [
     icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALRJREFUSA3tkusOgCAIhbH1/q9c1qLhFwk/arMtt6bCuQApMthaaj3bl14ljbwKp7gpUC3iruqQHwI64tp8V6ObTIiHJj2Du7GoKHdXayLquFPcIzNGzi7lGRBIIVsTc+QKDQiggBXXMzGNhjVoEpVNogp6O7GnFhMeWWMn6QikuLYDFXp0/w3CcX5/RPrU+ATD1pOAMhugmplQc2QRKfzr/8B20JTrXKKKHYqINeAIXMJwwRU0fRQohBLnUwAAAABJRU5ErkJggg==",
     help: {description: "exports your beautiful creation"},
     activate() {
-      new Alert(this.previewContext.canvas.toDataURL(), 0, "<a class='dismiss' href='" + this.previewContext.canvas.toDataURL() + "' download='TileMaker.png'>Download PNG</a>");
+      if (this.buffer && this.buffer.length > 0) {
+        var canvas = document.createElement("canvas");
+        var context = canvas.getContext("2d");
+        canvas.width = Math.ceil(Math.sqrt(this.buffer.length)) * 24;
+        canvas.height = Math.ceil(this.buffer.length / Math.ceil(Math.sqrt(this.buffer.length))) * 24;
+        var i = 0;
+        for (var y = 0; y < canvas.height; y += 24) {
+          for (var x = 0; x < canvas.width; x += 24) {
+            if (this.buffer.length == i) {break;}
+            context.putImageData(this.buffer[i++], x, y);
+          }
+        }
+      }
+
+      new Alert(this.previewContext.canvas.toDataURL(), 0, "<a class='dismiss' href='" + this.previewContext.canvas.toDataURL() + "' download='TileMaker.png'>Download PNG of Current Frame</a>" + (this.buffer && this.buffer.length > 0 ? canvas.toDataURL() + "<a class='dismiss' href='" + canvas.toDataURL() + "' download='TileMakerSave.png'>Download PNG of Saved Frames</a>": ""));
+      return false;
+    }
+  }, {
+    name: "Save",
+    icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALRJREFUSA3tkusOgCAIhbH1/q9c1qLhFwk/arMtt6bCuQApMthaaj3bl14ljbwKp7gpUC3iruqQHwI64tp8V6ObTIiHJj2Du7GoKHdXayLquFPcIzNGzi7lGRBIIVsTc+QKDQiggBXXMzGNhjVoEpVNogp6O7GnFhMeWWMn6QikuLYDFXp0/w3CcX5/RPrU+ATD1pOAMhugmplQc2QRKfzr/8B20JTrXKKKHYqINeAIXMJwwRU0fRQohBLnUwAAAABJRU5ErkJggg==",
+    help: {description: "Saves current frame as asset for export."},
+    activate() {
+      if (this.buffer === undefined) {
+        this.buffer = [];
+      }
+      this.buffer.push(this.previewContext.getImageData(0, 0, 24, 24));
+
+
+      if (this.buffer && this.buffer.length > 0) {
+        var canvas = document.createElement("canvas");
+        var context = canvas.getContext("2d");
+        canvas.width = Math.ceil(Math.sqrt(this.buffer.length)) * 24;
+        canvas.height = Math.ceil(this.buffer.length / Math.ceil(Math.sqrt(this.buffer.length))) * 24;
+
+        var i = 0;
+        for (var y = 0; y < canvas.height; y += 24) {
+          for (var x = 0; x < canvas.width; x += 24) {
+            if (this.buffer.length == i) {break;}
+            context.putImageData(this.buffer[i++], x, y);
+          }
+        }
+        new Alert("Saved!", 5, "<img style='width: 120px; height: 120px; flex-grow: 0; flex-shrink: 0;' src='" + canvas.toDataURL() + "'></img>");
+      }
+
+
+
       return false;
     }
   }, {

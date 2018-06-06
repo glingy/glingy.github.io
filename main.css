@@ -25,6 +25,7 @@ ul.nav {
   display: inline-block;
   width: 100%;
   background-color: #3E3E3E;
+  z-index: 10;
 }
 
 ul.nav li {
@@ -123,6 +124,8 @@ div.outerContent {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 div.content {

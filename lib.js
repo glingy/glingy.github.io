@@ -18,6 +18,7 @@ void((() => {
         <a href='../pong/index.html'>Pong</a> \
         <a href='../wheelFortune/index.html'>Wheel of Fortune</a> \
         <a href='https://github.com/glingy/Ionic-Gin'>Ionic Gin</a> \
+        <a href='../beta/index.html'>BETA: Robot Runner</a> \
       </div> \
     </li> \
     <li class='dropdown'> \

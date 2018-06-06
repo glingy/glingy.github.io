@@ -23,8 +23,9 @@ function Notification(type, message, timeout, html) {
   })
   if (timeout !== 0) {
     setTimeout(() => {
-      if (el.children) {el.children[1].children[0].click()}
-    }, timeout instanceof Number ? timeout : 5000);
+      console.log(el.children);
+      if (el.children) {el.children[1].children[0].onmouseup()}
+    }, typeof timeout == "number" ? timeout * 1000 : 5000);
   }
   document.getElementById("notifications").appendChild(el);
   el.classList.add("visible");
