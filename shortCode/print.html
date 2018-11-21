@@ -17,7 +17,7 @@
 <span id='Notes'><span></span>Notes:<span></span></span><br>
 <script>
   window.onmessage = function(e) {
-    str = e.data || 'GL7854-1001010101010100101010101'
+    str = e.data || 'GL7854-100101010101Notes'
     match = str.match(/^(?:([A-Z]{2,3})(?:([0-9]{3,5})(?:-(?:([01])(?:([012])(?:([01])(?:([01])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([012])(?:([012])?(?:(.*))?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?$/)
     fields = ['Initials', 'Team Number', 'Land', 'Samp', 'Claim', 'Park', 'Gold', 'Gold', 'Silver', 'Silver', 'Depot', 'Depot', 'Latch', 'Crater', 'Notes']
 
