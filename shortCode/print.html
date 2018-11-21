@@ -1,0 +1,75 @@
+<div>
+<span id='Initials'><span>[ * ]</span> Initals:<span></span></span><br>
+<span id='Team Number'><span>[ * ]</span> Team Number:<span></span></span><br>
+<br>
+<span id='Land'><span>[A]</span> Landed?<span>N</span><span>Y</span></span><br>
+<span id='Samp'><span>[A]</span> Sampling?<span>N</span><span>Y</span><span>Interfered</span></span><br>
+<span id='Claim'><span>[A]</span> Claimed?<span>N</span><span>Y</span></span><br>
+<span id='Park'><span>[A]</span> Parked in Crater?<span>N</span><span>Y</span></span><br>
+<br>
+<span id='Gold'><span>[T]</span> Gold Cargo:<span></span></span><br>
+<span id='Silver'><span>[T]</span> Silver Cargo:<span></span></span><br>
+<span id='Depot'><span>[T]</span> Depot:<span></span></span><br>
+<br>
+<span id='Latch'><span>[E]</span> Latched?<span>N</span><span>Y</span><span>Tried</span>  </span><br>
+<span id='Crater'><span>[E]</span> Crater?<span>N</span><span>In</span><span>Completely In</span></span><br>
+<br>
+<span id='Notes'><span></span>Notes:<span></span></span><br>
+<script>
+  window.onmessage = function(e) {
+    str = e.data || 'GL7854-1001010101010100101010101'
+    match = str.match(/^(?:([A-Z]{2,3})(?:([0-9]{3,5})(?:-(?:([01])(?:([012])(?:([01])(?:([01])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([012])(?:([012])?(?:(.*))?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?$/)
+    fields = ['Initials', 'Team Number', 'Land', 'Samp', 'Claim', 'Park', 'Gold', 'Gold', 'Silver', 'Silver', 'Depot', 'Depot', 'Latch', 'Crater', 'Notes']
+
+    Array.from(document.body.children[0].children).forEach((child) => {
+      child.classList.remove('error')
+      Array.from(child.children).slice(1).forEach((answer) => {
+        if (child.children.length == 2) {
+          answer.innerText = ''
+        }
+        answer.classList.remove('selected')
+      })
+    })
+    if (!match) {return}
+    match.slice(1).forEach((field, i) => {
+      el = document.getElementById(fields[i])
+      if (field) {
+        if (el.children.length == 2) {
+          el.children[1].classList.add('selected')
+          el.children[1].innerText += field
+        } else {
+          el.children[Number(field) + 1].classList.add('selected')
+        }
+      } else {
+        el.classList.add('error')
+      }
+    })
+  }
+  window.onload = window.onmessage
+</script>
+<style>
+  @font-face {
+    font-family: Montserrat;
+    src: url('Montserrat-Regular.ttf');
+  }
+  div {
+    color: white;
+    font-family: Montserrat;
+    line-height: 150%;
+    font-size: 11pt;
+    background-color: #232323;
+  }
+  div > span {
+
+  }
+  div > span.error > span:first-child {
+    color: red;
+  }
+  div > span > span:not(:first-child) {
+    margin-left: 20px;
+  }
+  div > span > span.selected {
+    color: #00ABEF;
+  }
+</style>
+</div>

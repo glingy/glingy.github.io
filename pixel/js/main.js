@@ -278,3 +278,5 @@ document.body.onkeydown = (e) => {
     e.preventDefault();
   }
 }
+
+window.onbeforeunload = function(e) {e.returnValue = "Leaving Already?";return "Are you sure? Saved buffers will be deleted."};
