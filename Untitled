@@ -1,0 +1,13 @@
+var noShowFormat1 = SpreadsheetApp.newConditionalFormatRule()
+  noShowFormat1.setBackground("#ea4335")
+  noShowFormat1.setFontColor("white")
+  noShowFormat1.whenFormulaSatisfied('=ISBLANK(C2)')
+  noShowFormat1.setRanges([timeSheetRange])
+  rules.push(noShowFormat1.build())
+
+  var noShowFormat2 = SpreadsheetApp.newConditionalFormatRule()
+  noShowFormat2.setBackground("#ea4335")
+  noShowFormat2.setFontColor("white")
+  noShowFormat2.whenFormulaSatisfied('=ISBLANK(C2)')
+  noShowFormat2.setRanges([durationRange])
+  rules.push(noShowFormat2.build())

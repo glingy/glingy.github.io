@@ -1,0 +1,735 @@
+<html><head>
+      <style id="style">
+@font-face {
+  font-family: 'Lato';
+  src: url('Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('Lato-Regular.woff') format('woff'), /* Modern Browsers */
+       url('Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('Lato-Black.woff2') format('woff2'), /* Modern Browsers */
+       url('Lato-Black.woff') format('woff'), /* Modern Browsers */
+       url('Lato-Black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+body {
+  font-size: 16px;
+  padding: 15px;
+  font-family: helvetica, arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+body .katex {
+  font: 400 1.2em 'KaTeX_Main';
+  line-height: 1.2em;
+  white-space: nowrap;
+  text-indent: 0;
+}
+body .katex .mfrac>.vlist>span:nth-child(2) {
+  top: 0 !important;
+}
+body .katex-error {
+  background-color: #f2dede;
+  color: #a64444;
+  padding: 5px;
+  margin: -5px;
+  border-radius: 5px;
+}
+body .flowchart-error,
+body .sequence-error {
+  background-color: #f2dede;
+  color: #a64444;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-box-pack: left;
+  -moz-box-pack: left;
+  -o-box-pack: left;
+  -ms-flex-pack: left;
+  -webkit-justify-content: left;
+  justify-content: left;
+}
+li label.taskListItem {
+  margin-left: -2em;
+}
+li label.taskListItem.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+div.math-rendered {
+  text-align: center;
+}
+.math-failed {
+  background-color: rgba(255,0,0,0.1);
+  color: #d90000;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+sup {
+  position: relative;
+  top: -0.4em;
+  font-size: 0.8em;
+  vertical-align: top;
+}
+sub {
+  position: relative;
+  bottom: -0.4em;
+  font-size: 0.8em;
+  vertical-align: top;
+}
+a {
+  color: #2bac8f;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: -5px;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  -ms-transition: 0.1s;
+  transition: 0.1s;
+}
+a img {
+  vertical-align: sub;
+}
+a:hover {
+  color: #2eb899;
+  text-decoration: underline;
+  background-color: rgba(255,201,92,0.3);
+}
+a:visited {
+  color: #2bac8f;
+}
+hr {
+  border-top: none;
+  border-bottom: solid 1px #d0d0d0;
+  margin: 15px 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  word-wrap: break-word;
+}
+h1 {
+  font-size: 2.55em;
+  padding-bottom: 0.3em;
+  line-height: 1.2em;
+  border-bottom: solid 1px #d0d0d0;
+  margin: 1em 0 0.44em;
+}
+h1:first-child {
+  margin-top: 0;
+}
+h2 {
+  font-size: 1.75em;
+  padding-bottom: 0.3em;
+  line-height: 1.225em;
+  border-bottom: solid 1px #d0d0d0;
+  margin: 1em 0 0.57em;
+}
+h2:first-child {
+  margin-top: 0;
+}
+h3 {
+  font-size: 1.5em;
+  line-height: 1.43em;
+  margin: 1em 0 0.66em;
+}
+h4 {
+  font-size: 1.25em;
+  line-height: 1.4em;
+  margin: 1em 0 0.8em;
+}
+h5 {
+  font-size: 1em;
+  line-height: 1.4em;
+  margin: 1em 0 1em;
+}
+h6 {
+  font-size: 1em;
+  line-height: 1.4em;
+  margin: 1em 0 1em;
+  color: #777;
+}
+p {
+  line-height: 1.6em;
+  margin: 0 0 1em;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+img {
+  max-width: 100%;
+}
+strong,
+b {
+  font-weight: bold;
+}
+em,
+i {
+  font-style: italic;
+}
+s,
+del,
+strike {
+  text-decoration: line-through;
+}
+u {
+  text-decoration: underline;
+}
+blockquote {
+  border-left: solid 4px #3fb399;
+  margin: 0 0 1em;
+  padding: 0 25px;
+}
+ul {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+ul li {
+  display: list-item;
+}
+ul li p {
+  margin: 0;
+}
+ul>li>ul,
+ul>li>ol {
+  margin: 0;
+}
+ul>li>ul {
+  list-style-type: circle;
+}
+ul>li>ul>li>ul {
+  list-style-type: square;
+}
+ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+ol li {
+  display: list-item;
+}
+ol li p {
+  margin: 0;
+}
+ol>li>ul,
+ol>li>ol {
+  margin: 0;
+}
+code {
+  color: #cc305f;
+  padding: 0.2em 0.4em;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  font-size: 1em;
+  text-decoration: none;
+  margin-right: 2px;
+}
+pre {
+  padding: 0.5em !important;
+  border: solid 1px #d1d1d1;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 0 0 1em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  line-height: 1.4em;
+}
+pre.flowchart,
+pre.sequence {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #fff;
+}
+pre.CodeMirror {
+  height: initial;
+}
+pre.CodeMirror>code {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow-x: auto;
+}
+pre code {
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+pre>span.lineNumber {
+  display: none;
+  font-size: 1em;
+  padding: 0.5em 0;
+  margin: -0.5em 0.5em -0.5em -0.5em;
+  border-right: 1px solid;
+  text-align: right;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+pre>span.lineNumber.CodeMirror-gutters {
+  position: initial;
+  top: initial;
+  left: initial;
+  min-height: 0 !important;
+}
+pre>span.lineNumber>span {
+  display: block;
+  padding: 0 0.5em 0;
+}
+table {
+  display: block;
+  width: 100%;
+  margin: 0 0 1em;
+}
+table thead tr {
+  background-color: #fff;
+}
+table thead th {
+  border-style: solid;
+  padding: 6px 13px;
+  line-height: 1.6;
+  border-width: 1px 0 2px 1px;
+  border-color: #d0d0d0;
+  font-weight: bold;
+}
+table thead th:last-child {
+  border-right: solid 1px #d0d0d0;
+}
+table tbody tr:nth-child(2n + 1) {
+  background-color: #f9f9f9;
+}
+table tbody tr:nth-child(2n) {
+  background-color: #fff;
+}
+table tbody td {
+  border-style: solid;
+  padding: 6px 13px;
+  line-height: 1.6;
+  border-width: 0 0 1px 1px;
+  border-color: #d0d0d0;
+}
+table tbody td:last-child {
+  border-right: solid 1px #d0d0d0;
+}
+kbd {
+  background-color: #fafbfc;
+  border: solid 1px #d0d0d0;
+  border-bottom-color: #888;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 -1px 0 #959da5;
+  box-shadow: inset 0 -1px 0 #959da5;
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+  padding: 3px 5px;
+}
+body[data-theme="dark"] {
+  color: #f9f9f9;
+  border-color: #444b59;
+  background-color: #2c3033;
+}
+body[data-theme="dark"] a:hover {
+  background-color: rgba(90,214,186,0.2) !important;
+}
+body[data-theme="dark"] code {
+  color: #ea6730;
+  border-color: #3d4450;
+  background-color: #363a3e;
+}
+body[data-theme="dark"] pre {
+  border-color: #474f5c;
+}
+body[data-theme="dark"] pre code {
+  background-color: transparent;
+}
+body[data-theme="dark"] label.taskListItem {
+  background-color: #2c3033;
+}
+body[data-theme="dark"] table thead tr {
+  background-color: #282b2e;
+}
+body[data-theme="dark"] table thead th {
+  border-color: #444b59;
+}
+body[data-theme="dark"] table thead th:last-child {
+  border-right: solid 1px #444b59;
+}
+body[data-theme="dark"] table tbody tr:nth-child(2n + 1) {
+  background-color: #2c3033;
+}
+body[data-theme="dark"] table tbody tr:nth-child(2n) {
+  background-color: #282b2e;
+}
+body[data-theme="dark"] table tbody td {
+  border-color: #444b59;
+}
+body[data-theme="dark"] table tbody td:last-child {
+  border-right: solid 1px #444b59;
+}
+body[data-theme="dark"] kbd {
+  background-color: #444b59;
+  color: #f9f9f9;
+}
+body[data-theme="solarized-dark"] {
+  color: #93a1a1;
+  border-color: #444b59;
+  background-color: #073642;
+}
+body[data-theme="solarized-dark"] table thead tr {
+  background-color: #06313b;
+}
+body[data-theme="solarized-dark"] table thead th {
+  border-color: #444b59;
+}
+body[data-theme="solarized-dark"] table thead th:last-child {
+  border-right: solid 1px #444b59;
+}
+body[data-theme="solarized-dark"] table tbody tr:nth-child(2n + 1) {
+  background-color: #073642;
+}
+body[data-theme="solarized-dark"] table tbody tr:nth-child(2n) {
+  background-color: #06313b;
+}
+body[data-theme="solarized-dark"] table tbody td {
+  border-color: #444b59;
+}
+body[data-theme="solarized-dark"] table tbody td:last-child {
+  border-right: solid 1px #444b59;
+}
+/*# sourceMappingURL=browser/components/markdown.css.map */
+body {
+  font-family: 'Lato','helvetica','arial','sans-serif';
+  font-size: 14px;
+  false
+}
+code {
+  font-family: 'Monaco','Consolas','Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro','monospace';
+  background-color: rgba(0,0,0,0.04);
+}
+.lineNumber {
+  display: block !important;
+  font-family: 'Monaco','Consolas','Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro','monospace';
+}
+
+.clipboardButton {
+  color: rgba(147,147,149,0.8);;
+  fill: rgba(147,147,149,1);;
+  border-radius: 50%;
+  margin: 0px 10px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.clipboardButton:hover {
+  transition: 0.2s;
+  color: #939395;
+  fill: #939395;
+  background-color: rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  border: none;
+}
+
+h1 {
+  padding-bottom: 4px;
+  margin: 1em 0 8px;
+}
+
+h2 {
+  padding-bottom: 0.2em;
+  margin: 1em 0 0.37em;
+}
+
+body p {
+  white-space: normal;
+}
+</style>
+      <!--<link rel="stylesheet" href="file:///Users/gregory.ling/Applications/Boostnote.app/Contents/Resources/app/node_modules/katex/dist/katex.min.css">-->
+      <link rel="stylesheet" href="codemirror.css">
+      <link rel="stylesheet" id="codeTheme" href="dracula.css">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head><body data-theme="default"><h1 data-line="0" id="JSON-Adventure-Map-Layout">JSON Adventure Map Layout</h1>
+<hr>
+<h3 data-line="2" id="Action-Layout">Action Layout</h3>
+<p data-line="3">Overrides for responses to the verbs when acted upon the object or in the room.<br>
+Example:</p>
+<pre class="code cm-s-dracula CodeMirror"><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span><code class="JSON"><span class="cm-variable">actions</span>: {
+  <span class="cm-property">look</span>: <span class="cm-string">'This is the description of the room or object when inspected'</span>
+}
+</code><i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre>
+<h4 data-line="10" id="Possible-Actions">Possible Actions</h4>
+<ul>
+<li><code>name</code>
+<ul>
+<li><strong>Default:</strong> <code>Unnamed Room</code></li>
+<li><strong>Alias(es):</strong> none</li>
+<li>This returns the name of the room.</li>
+</ul>
+</li>
+<li><code>look</code>
+<ul>
+<li><strong>Default:</strong> <code>There is nothing special about the [$object]</code></li>
+<li><strong>Alias(es):</strong> l, examine, x</li>
+<li>When called as l or look, it takes no parameters and gives a general description of the room following the <code>look</code> action in the current room.</li>
+<li>When called as x or examine, it takes one parameter, the object to examine, and gives a detailed explanation of the object following the <code>look</code> action in the given object.</li>
+</ul>
+</li>
+<li><code>take</code> ($object)
+<ul>
+<li><strong>Default:</strong> <code>You have picked up the [$object][Allow]</code></li>
+<li><strong>Alias(es):</strong> get, pick, pick up</li>
+<li>This attempts to take an object and place it in the user’s inventory.</li>
+</ul>
+</li>
+<li><code>drop</code> ($object)
+<ul>
+<li><strong>Default:</strong> <code>You have dropped the [$object][Allow]</code></li>
+<li><strong>Alias(es):</strong> place (on floor/ground), throw</li>
+<li>This attempts to drop an object on the ground from the user’s inventory. The object will now have it’s obvious property set to true if it was undefined.</li>
+</ul>
+</li>
+<li><code>place</code> ($object) in/on ($target)
+<ul>
+<li><strong>Default:</strong> <code>[$target==?You have placed the [$object] in the [$target][Allow]:You cannot place the [$object] in the [$target]]</code></li>
+<li><strong>Alias(es):</strong> insert in/on, put in/on, drop in/on, pour in/on, throw in/on/at</li>
+<li>Attempt to insert an object inside another object. Only called on the container in the placement.</li>
+</ul>
+</li>
+<li><code>remove</code> ($object) from ($target)
+<ul>
+<li><strong>Default:</strong> <code>[$target==?You have taken the [$object] from the [$target][Allow]:You cannot remove the [$object] from the [$target]]</code></li>
+<li><strong>Alias(es):</strong> take (when inside container), get</li>
+<li>Attempt to remove an object from a container. Only called on the container.</li>
+</ul>
+</li>
+<li><strong>Other:</strong>
+<ul>
+<li>You can create custom commands by adding an undefined action to the list of actions for a room or an object and any subjects and direct objects will be passed.</li>
+</ul>
+</li>
+<li><code>enter</code> / <code>leave</code>
+<ul>
+<li>Not a real command, defines something to say on entry or exit of a room</li>
+</ul>
+</li>
+</ul>
+<h3 data-line="41" id="Map-Layout">Map Layout</h3>
+<pre class="code cm-s-dracula CodeMirror"><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span></span><code class="JSON"><span class="cm-variable">map</span>: {
+  <span class="cm-property">actions</span>: {
+    <span class="cm-property">start</span>: <span class="cm-string">'_unique_room_name_'</span>,
+    <span class="cm-comment">// See actions above</span>
+    <span class="cm-property">_verb_</span>: <span class="cm-string">'_response_'</span>
+  },
+  <span class="cm-property">rooms</span>: {
+    <span class="cm-property">_unique_room_name_</span>: {
+      <span class="cm-property">actions</span>: {<span class="cm-meta">...</span>},
+      <span class="cm-property">objects</span>: {
+        <span class="cm-property">_unique_object_name_</span>: {
+          <span class="cm-comment">// Actions...</span>
+        },
+        <span class="cm-property">_other_object_name_</span>: {
+          <span class="cm-comment">// Actions...</span>
+        }
+      },
+      <span class="cm-property">_other_room_name_</span>: {
+        <span class="cm-meta">...</span>
+      }
+    }
+  }
+}
+</code><i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre>
+<p data-line="67">Each room must have a unique identifiable name to be used as a reference when directing the player to a room, and each object must have a unique identifiable name to be used as a reference when doing something to the object.</p>
+<p data-line="69">If the key <code>obvious</code> is set to <code>true</code>, the object will be obviously mentioned when looking in a room. Any objects that have been placed will become obvious.</p>
+<h3 data-line="71" id="Response-Formatting">Response Formatting</h3>
+<p data-line="72">The string responses can be formatted to achieve dynamic results. For example,<br>
+<code>Bye![-&gt;some_room_name]</code> will direct the player to a room after printing <code>Bye</code>. These <code>[...]</code> statements can be interspersed within the string wherever normal text would be accepted. Whitespace can optionally be inserted between significant characters as shown.</p>
+<h4 data-line="75" id="Special-Formats">Special Formats</h4>
+<ul>
+<li><code>[-&gt; some_room_name ]</code> will transport a player to a room specified with the name given (often used for movement: <code>north: '[-&gt;northward_room]'</code>)</li>
+<li><code>[ var_name ]</code> will print the value of the variable. A variable name that starts with a $ is a special parameter reserved for $subject and $object, subject of the verb and direct object of the verb respectively. A variable name that starts with a @ is a truthy value of whether the object name exists in the player’s inventory. Can also find properties of objects with <code>obj_name.prop_name</code> to allow you to set the obvious property.</li>
+<li><code>[ var_name == value ? Yay it's true! : Nope. It's false. ]</code> is a conditional statement which prints the first string (optionally contianing more <code>[...]</code>) if true and the second string if false.</li>
+<li><code>[ var_name = value ]</code> sets the value of var_name to a value. Only works on non-special variables (not $ or @)</li>
+<li><code>[Allow/Deny]</code> Allows or denies the attempted action. The most specific is acknowledged. For example, if allowed in the map’s action list, but denied in the room’s action list, then it is denied.</li>
+</ul>
+<h3 data-line="83" id="Example-Map">Example Map</h3>
+<pre class="code cm-s-dracula CodeMirror"><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span><span class="CodeMirror-linenumber">42</span><span class="CodeMirror-linenumber">43</span><span class="CodeMirror-linenumber">44</span><span class="CodeMirror-linenumber">45</span><span class="CodeMirror-linenumber">46</span><span class="CodeMirror-linenumber">47</span><span class="CodeMirror-linenumber">48</span><span class="CodeMirror-linenumber">49</span><span class="CodeMirror-linenumber">50</span></span><code class="JSON"><span class="cm-variable">map</span>: {
+  <span class="cm-property">actions</span>: {
+    <span class="cm-property">_default</span>: <span class="cm-string">'Sorry, I do not understand how to ${verb}.'</span>
+  },
+  <span class="cm-property">rooms</span>: {
+    <span class="cm-property">example_room</span>: {
+      <span class="cm-property">actions</span>: {
+        <span class="cm-property">name</span>: <span class="cm-string">'Example Room'</span>,
+        <span class="cm-property">look</span>: <span class="cm-string">'This is an Example Room. [example_looked?You have seen this [found_gold_key?room:rock] before...:[example_looked=True]] There is a room to the north.'</span>,
+        <span class="cm-property">help</span>: <span class="cm-string">'I refuse to help you.'</span>,
+        <span class="cm-property">north</span>: <span class="cm-string">'[-&gt;next_room]'</span>
+      },
+      <span class="cm-property">objects</span>: {
+        <span class="cm-property">example_object</span>: {
+          <span class="cm-property">name</span>: <span class="cm-string">'Example Container'</span>,
+          <span class="cm-property">obvious</span>: <span class="cm-atom">true</span>,
+          <span class="cm-property">take</span>: <span class="cm-string">'Sorry. This object cannot be lifted.[prevent]'</span>,
+          <span class="cm-property">add</span>: <span class="cm-string">'[$object==trap_object?You are very smart... You may leave now[allow]:This is a very picky container[prevent]]'</span>
+        },
+        <span class="cm-property">trap_object</span>: {
+          <span class="cm-property">name</span>: <span class="cm-string">'Special Object'</span>,
+          <span class="cm-property">take</span>: <span class="cm-string">'You are doomed.'</span>,
+          <span class="cm-property">obvious</span>: <span class="cm-atom">true</span>,
+          <span class="cm-property">drop</span>: <span class="cm-string">'Sorry. You cannot drop this object on the floor. :P[prevent]'</span>
+        },
+        <span class="cm-property">gold_key</span>: {
+          <span class="cm-property">name</span>: <span class="cm-string">"[@gold_key?A Golden Key:A rock]"</span>,
+          <span class="cm-property">take</span>: <span class="cm-string">'You have found a Golden Key![found_gold_key=True]'</span>
+        }
+      }
+    },
+    <span class="cm-property">next_room</span>: {
+      <span class="cm-property">actions</span>: {
+        <span class="cm-property">name</span>: <span class="cm-string">'Other Room'</span>,
+        <span class="cm-property">look</span>: <span class="cm-string">'There is a locked door at the end of the hall.'</span>,
+        <span class="cm-property">south</span>: <span class="cm-string">'[-&gt;example_room]'</span>
+      },
+      <span class="cm-property">objects</span>: {
+        <span class="cm-property">door</span>: {
+          <span class="cm-property">name</span>: <span class="cm-string">"Antique Door"</span>,
+          <span class="cm-property">look</span>: <span class="cm-string">"An old antique door with a lock. It looks very important."</span>
+        },
+        <span class="cm-property">lock</span>: {
+          <span class="cm-property">name</span>: <span class="cm-string">"Antique Lock"</span>,
+          <span class="cm-property">add</span>: <span class="cm-string">'[$object==gold_key?The key fits![allow][win]:Good luck with that...[prevent]]'</span>
+        }
+      }
+    }
+  }
+}
+</code><i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre>
+</body></html>
