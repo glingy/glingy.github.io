@@ -22,7 +22,7 @@
         <script>
           function validate(el) {
             console.log(el.elements.namedItem('tarea').value)
-            if (el.elements.namedItem('tarea').value.match(/^(?:([A-Za-z]{2,3})(?:([0-9]{5})(?:([1-5])(?:([0-1])(?:([0-2])(?:([0-6])(?:([0-6])(?:([0-1])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-2])(?:([0-9])(?:([0-9])(?:([0-1])(?:(.+)))))))))))))))))$/)) {
+            if (el.elements.namedItem('tarea').value.match(/^([A-Za-z]{2,3})([0-9]{5})([1-5])([0-1])([0-2])([0-6])([0-6])([0-1])([0-9])([0-9])([0-9])([0-2])([0-9])([0-9])([0-1])([0-1])(.*)/)) {
               document.getElementById('error').style.display = 'none'
               return true
             } else {
@@ -33,7 +33,7 @@
           }
 
           function send(el) {
-            fields = el.elements.namedItem('tarea').value.match(/^(?:([A-Za-z]{2,3})(?:([0-9]{5})(?:([1-5])(?:([0-1])(?:([0-2])(?:([0-6])(?:([0-6])(?:([0-1])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-2])(?:([0-9])(?:([0-9])(?:([0-1])(?:(.+)))))))))))))))))$/)
+            fields = el.elements.namedItem('tarea').value.match(/^([A-Za-z]{2,3})([0-9]{5})([1-5])([0-1])([0-2])([0-6])([0-6])([0-1])([0-9])([0-9])([0-9])([0-2])([0-9])([0-9])([0-1])([0-1])(.*)/)
 
             var entries = [
               ['entry.795256051'],
@@ -54,6 +54,7 @@
               ['&entry.394350005', 'No', 'Yes'],
               ['&entry.1656956260']
             ]
+            console.log(fields)
             var url = "";
             fields.slice(1).forEach((field, i) => {
               url += entries[i][0] + '=' + (entries[i].length == 1 ? encodeURIComponent(field) : entries[i][Number(field) + 1])
