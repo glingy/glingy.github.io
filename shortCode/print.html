@@ -1,25 +1,31 @@
 <div>
 <span id='Initials'><span>[ * ]</span> Initals:<span></span></span><br>
 <span id='Team Number'><span>[ * ]</span> Team Number:<span></span></span><br>
+<span id='Match Number'><span>[ * ]</span> Match Number:<span></span></span><br>
 <br>
-<span id='Land'><span>[A]</span> Landed?<span>N</span><span>Y</span></span><br>
-<span id='Samp'><span>[A]</span> Sampling?<span>N</span><span>Y</span><span>Interfered</span></span><br>
-<span id='Claim'><span>[A]</span> Claimed?<span>N</span><span>Y</span></span><br>
+<span id='Build'><span>[A]</span> Foundation to Build Site?<span>N</span><span>Y</span></span><br>
+<span id='Skystones'><span>[A]</span> Skystones:<span>0</span><span>1</span><span>2</span></span><br>
+<span id='AutoStones'><span>[A]</span> Other Stones:<span></span></span><br>
+<span id='AutoFoundStones'><span>[A]</span> Stones on Foundation:<span></span></span><br>
 <span id='Park'><span>[A]</span> Parked in Crater?<span>N</span><span>Y</span></span><br>
 <br>
-<span id='Gold'><span>[T]</span> Gold Cargo:<span></span></span><br>
-<span id='Silver'><span>[T]</span> Silver Cargo:<span></span></span><br>
-<span id='Depot'><span>[T]</span> Depot:<span></span></span><br>
+<span id='Delivered'><span>[T]</span> Stones Delivered:<span></span></span><br>
+<span id='Foundation'><span>[T]</span> Stones on Foundation:<span></span></span><br>
+<span id='Skyscraper'><span>[T]</span> Tallest Skyscraper Height:<span></span></span><br>
 <br>
-<span id='Latch'><span>[E]</span> Latched?<span>N</span><span>Y</span><span>Tried</span>  </span><br>
-<span id='Crater'><span>[E]</span> Crater?<span>N</span><span>In</span><span>Completely In</span></span><br>
+<span id='Capstones'><span>[E]</span> Capstones:<span>0</span><span>1</span><span>2</span></span><br>
+<span id='Cap1'><span>[E]</span> Capped Skyscraper 1 Height:<span></span></span><br>
+<span id='Cap2'><span>[E]</span> Capped Skyscraper 2 Height:<span></span></span><br>
+<span id='UnBuild'><span>[E]</span> Foundation off Build?<span>N</span><span>Y</span></span><br>
+<span id='EndPark'><span>[E]</span> Parked in Build Site?<span>N</span><span>Y</span></span><br>
 <br>
 <span id='Notes'><span></span>Notes:<span></span></span><br>
 <script>
   window.onmessage = function(e) {
-    str = e.data || 'GL7854-100101010101Notes'
-    match = str.match(/^(?:([A-Za-z]{2,3})(?:([0-9]{3,5})(?:-(?:([01])(?:([012])(?:([01])(?:([01])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-9])(?:([012])(?:([012])?(?:(.*))?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?$/)
-    fields = ['Initials', 'Team Number', 'Land', 'Samp', 'Claim', 'Park', 'Gold', 'Gold', 'Silver', 'Silver', 'Depot', 'Depot', 'Latch', 'Crater', 'Notes']
+    str = e.data || 'GL0785411202133313111Notes'
+    console.log(str)
+    match = str.match(/^(?:([A-Za-z]{2,3})(?:([0-9]{5})(?:([1-5])(?:([0-1])(?:([0-2])(?:([0-6])(?:([0-6])(?:([0-1])(?:([0-9])(?:([0-9])(?:([0-9])(?:([0-2])(?:([0-9])(?:([0-9])(?:([0-1])(?:([0-1])(?:(.+))?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?/)
+    fields = ['Initials', 'Team Number', 'Match Number', 'Build', 'Skystones', 'AutoStones', 'AutoFoundStones', 'Park', 'Delivered', 'Foundation', 'Skyscraper', 'Capstones', 'Cap1', 'Cap2', 'UnBuild', 'EndPark', 'Notes']
 
     Array.from(document.body.children[0].children).forEach((child) => {
       child.classList.remove('error')
@@ -37,8 +43,10 @@
         if (el.children.length == 2) {
           el.children[1].classList.add('selected')
           el.children[1].innerText += field
-        } else {
+        } else if (el.children.length > Number(field) && !isNaN(field)){
           el.children[Number(field) + 1].classList.add('selected')
+        } else {
+          el.classList.add('error')
         }
       } else {
         el.classList.add('error')
