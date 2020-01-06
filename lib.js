@@ -36,7 +36,7 @@ void((() => {
       <div class='dropdown-content'> \
         <a href='../news/index.html'>News</a> \
         <a href='../satire/index.html'>Computational Satire</a> \
-        <a href='https://glingy.github.io/BriansBrain/index.html'>Brian's Brain</a> \
+        <a href='../BriansBrain/index.html'>Brian's Brain</a> \
       </div> \
     </li> \
     <li class='dropdown'> \
