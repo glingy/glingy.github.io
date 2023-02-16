@@ -35,6 +35,7 @@ import NavBar from './components/NavBar.vue';
     margin-left: 0;
     padding: 10px;
     width: calc(100vw - 20px);
+    min-height: calc(100vh - 40px - var(--navbar-height));
   }
 }
 </style>

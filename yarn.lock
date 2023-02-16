@@ -327,7 +327,7 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.45.tgz#a3fffa7489eafff38d984e23d0236e230c818bc2"
   integrity sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==
 
-"@yankeeinlondon/builder-api@^1.2.1", "@yankeeinlondon/builder-api@^1.3.4", "@yankeeinlondon/builder-api@^1.4.1":
+"@yankeeinlondon/builder-api@^1.2.1", "@yankeeinlondon/builder-api@^1.2.2", "@yankeeinlondon/builder-api@^1.3.4", "@yankeeinlondon/builder-api@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@yankeeinlondon/builder-api/-/builder-api-1.4.1.tgz#0768ded0c24233df4275e66fc4996cbdee5e1000"
   integrity sha512-qc6HyfqtuS06FvA5rK0L62Nmc1LnarVOt8/V/mTX2DBZlpTfIDpudpbE/7/kxjme9pP4PFMCk7cPSrprLEorjw==
@@ -359,6 +359,14 @@
     fp-ts "^2.13.1"
     happy-dom "^8.1.0"
     native-dash "^1.24.0"
+
+"@yankeeinlondon/link-builder@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@yankeeinlondon/link-builder/-/link-builder-1.2.1.tgz#a497bf50faa8cd3d6e3a298fc8286d8897efd7ba"
+  integrity sha512-ohQQ42CE/LaUpPLoWy6KQ+55wVpPIQYh2fWvcnFSLHPsRsCHBP0Taf7fXbBTEnQvlOrX0ot+GOAKu5J2p7YC6g==
+  dependencies:
+    "@yankeeinlondon/builder-api" "^1.2.2"
+    "@yankeeinlondon/happy-wrapper" "^2.10.1"
 
 acorn-walk@^8.2.0:
   version "8.2.0"
