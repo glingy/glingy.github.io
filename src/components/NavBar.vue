@@ -19,15 +19,8 @@ function hide() {
 <template>
   <div id="navbar" @click="hide">
     <div>
-      <router-link to='/'>
-        <img src="/turtle.svg" width="40"/></router-link>
-      <div>
-        <router-link to='/projects'>Projects</router-link>
-        <div>
-          <router-link to='/projects/test'>Test1</router-link>
-          <router-link to='/projects/1'>Projects</router-link>
-          <router-link to='/projects/2'>Projects</router-link>
-        </div>
+      <router-link to='/'><img src="/turtle.svg" width="40"/></router-link>
+      <router-link to='/projects'>Projects</router-link>
       </div>
     </div>
     <div>
