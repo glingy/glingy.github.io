@@ -10,31 +10,30 @@ import NavBar from './components/NavBar.vue';
 
 <style>
 .content {
-  position: relative;
-  top: 0;
   display: block;
-  margin-left: calc(50% - 520px);
-  width: 1000px;
+  width: calc(1000px - var(--content-side-padding-large)*2);
   padding: 20px;
   background-color: var(--content-background);
   box-shadow: 0px 0px 5px 0px black;
-  margin-top: calc(10px + var(--navbar-height));
+  margin-top: 10px;
   margin-bottom: 10px;
   min-height: calc(100vh - 60px - var(--navbar-height));
+  padding-left: var(--content-side-padding-large);
+  padding-right: var(--content-side-padding-large);
 }
 
 @media screen and (max-width: 1060px) {
   .content {
-    margin-left: 10px;
-    width: calc(100vw - 60px);
+    width: calc(100vw - var(--content-side-padding-medium)*2 - 60px);
+    padding-left: var(--content-side-padding-medium);
+    padding-right: var(--content-side-padding-medium);
   }
 }
 
 @media screen and (max-width: 600px) {
   .content {
-    margin-left: 0;
     padding: 10px;
-    width: calc(100vw - 20px);
+    width: calc(100vw - 40px);
     min-height: calc(100vh - 40px - var(--navbar-height));
   }
 }

@@ -1,12 +1,23 @@
 # Main Projects
-[**Hello** An example test project lorem ipsum test test test testing](/projects/test)
-[**glingy.github.io** An example test project lorem ipsum test test test testing](https://github.com/glingy/glingy.github.io)
+[**Custom ASIC Design & Fabrication** Senior Design project to design and submit a custom ASIC for fabrication using the eFabless OpenROAD process](/projects/asic)
+[**ATSAMD21 Playground** Design of a custom board using an ATSAMD21 microcontroller to aid in teaching new solar car members very low-level programming](/projects/playground)
 
+# Research Projects
+[**Bobber iFPGA Accelerator** Improving the efficiency of an FPGA accelerator for intermittent computing](/projects/bobber)
+[**Wireless Intermittent Testbed** Firmware design of an experimental testbed for testing wireless communication under intermittent power](/projects/testbed)
 
-# Other Projects
-[**Hello** An example test project lorem ipsum test test test testing](/projects/test)
-[**glingy.github.io** An example test project lorem ipsum test test test testing](https://github.com/glingy/glingy.github.io)
+# Solar Car Projects
+[**Overview** An overview of the Solar Car for those not familiar with the team as a whole](/projects/prisum)
+[**Compute Tester** A board to test Compute modules for Solar Car for diagnosis and verification](/projects/tester)
+[**Telemetry System** A C++ web server with Vue.JS frontend to provide telemetry information from the Solar Car over WiFi and cellular data](/projects/telem)
 
+# In-Progress Projects
+[**Compute Simulator** A program to simulate an ATSAMC21 microcontroller for use with Solar Car for debugging without hardware](/projects/simulator)
+
+# Coursework Projects
+[**CPRE 381 MIPS32 processor in VHDL** CPRE 381 project to design a pipelined processor in VHDL to execute MIPS instructions](/projects/mips)
+[**CPRE 288 Roomba Control** CPRE 288 project to program a TIVA microcontroller to control a Roomba and act as a WebSocket Server for remote control](/projects/roomba)
+[**CPRE 488 ZedBoard Projects** CPRE 488 projects using a zedboard to perform various tasks (NES Emulation, quadcopter control, image acquisition, and more)](/projects/zedboard)
 
 <style scoped lang="less">
 ul {

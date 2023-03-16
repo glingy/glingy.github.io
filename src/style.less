@@ -38,9 +38,13 @@
   --theme-color: hsl(var(--theme-hue), var(--theme-saturation), var(--theme-lightness));
   --base-background-color: var(--mono-base);
   --base-color: #d3d3d3;
+  --block-color: rgb(150, 150, 150);
 
   --navbar-height: 50px;
   --base-font-size: 1em;
+  --content-side-padding-large: 150px;
+  --content-side-padding-medium: 100px;
+  --content-side-padding-small: 0;
 
 
   --navbar-background: var(--mono-shade3);
@@ -48,13 +52,14 @@
   --navbar-highlight: var(--theme-color);
   --text-highlight: var(--theme-color);
   --text-strong : hsl(var(--theme-hue), var(--theme-saturation), 45%);
-  --content-background: hsla(var(--mono-hue), var(--mono-saturation), 25%, 70%);
+  --base-font: menlo, 'Courier New', Courier, monospace;
+  --content-background: hsla(var(--mono-hue), var(--mono-saturation), 15%, 70%);
   --background-hover : hsla(var(--mono-hue), var(--mono-saturation), 100%, 10%);
   /* color-scheme: light dark;*/
   color-scheme: dark;
   color: var(--base-color);
   background-color: var(--base-background-color);
-  background-image: url("/background.svg")
+  background-image: url("/background.svg");
 }
 
 #app {
@@ -64,6 +69,10 @@
 
 body {
   margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -71,10 +80,18 @@ h1 {
   font-size: 2em;
 }
 
+
+
 .content {
   img {
       width: 100%;
     }
+
+  .row {
+    img {
+      width: 50%;
+    }
+  }
   /*img {
     position: relative;
     left: 25%;
@@ -86,6 +103,20 @@ h1 {
     width: 100%;
     box-shadow: 0 0 5px 0 var(--theme-color);
   }*/
+}
+
+a {
+  color: inherit;
+}
+
+p, ul {
+  font-family: Roboto;
+  line-height: 1.5em;
+  color: var(--block-color);
+}
+
+.markdown-body {
+  
 }
 
 /*

@@ -48,7 +48,7 @@ onMounted(() => {
 
 <style scoped lang="less">
 .typing {
-
+  font-family: var(--base-font);
   span {
     color: var(--text-highlight);
     line-height: 1em;
