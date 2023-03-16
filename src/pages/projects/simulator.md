@@ -1,6 +1,7 @@
-# 
+# Compute Simulator
 
+This project is more of an in-progress dream at the moment. The goal of this project is to make a fully-featured simulator of the Atmel SAM C21 microcontroller including all peripherals in such a way that we can simulate the entire network of processors that make up our solar car. This would allow us to perform software unit-testing that we cannot currently perform due to the requirement for physical hardware to test most of our code and so we can perform full-system tests of the car without actually needing the car. On a smaller scale, this would allow us to get a deeper view of the processor as we program them, helping us analyze why SPI isn't being sent or why our clock appears to be twice as fast as it should be. It could also let new members try out programs on a system which requires no physical hardware at all and which cannot be irreparably damaged. The new-member learning portion of the project got superceded with the Playground boards since I realized that the physical hardware plays a far more significant role in teaching new programmers than I first thought, so this project has been placed on the backburner until I get more time.
 
-
+Currently, it can execute most of the Thumb instruction set of the Cortex M0+ with the exception of interrupt handling, and has cycle-accurate oscillators including startup time. It can output a VCD (Value Change Dump) waveform of any signal requested and is so far accurate to a real Atmel SAM C21. The proof of concept has been passed, now it's a matter of time and energy to finish the project.
 
 [< Back to Projects](/projects)

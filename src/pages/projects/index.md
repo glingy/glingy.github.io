@@ -7,11 +7,9 @@
 [**Wireless Intermittent Testbed** Firmware design of an experimental testbed for testing wireless communication under intermittent power](/projects/testbed)
 
 # Solar Car Projects
-[**Overview** An overview of the Solar Car for those not familiar with the team as a whole](/projects/prisum)
+[**Prisum Overview** An overview of the Solar Car for those not familiar with the team as a whole](/projects/prisum)
 [**Compute Tester** A board to test Compute modules for Solar Car for diagnosis and verification](/projects/tester)
 [**Telemetry System** A C++ web server with Vue.JS frontend to provide telemetry information from the Solar Car over WiFi and cellular data](/projects/telem)
-
-# In-Progress Projects
 [**Compute Simulator** A program to simulate an ATSAMC21 microcontroller for use with Solar Car for debugging without hardware](/projects/simulator)
 
 # Coursework Projects
