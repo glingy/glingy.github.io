@@ -1,6 +1,10 @@
-# 
+# Wireless Intermittent Testbed
 
+This was my first research project with Dr. Duwe, writing the firmware to run a testbed for intermittently-powered wireless protocols. The research group is testing how nodes which are powered intermittently can communicate with very little knowledge of their neighbors. In a simple two-node setup, both nodes might be harvesting energy at different rates and so one might recharge faster than the other. These two nodes would be periodically in and out of sync, so the goal of the research group is to find ways to determine when two nodes are in sync using the least amount of energy for both nodes while performing as much data transfer as possible during the short periods of time in which both nodes on.
 
+Each node is made of one TI MSP430FR5994 which can save state into its internal FRAM so it can recover easily when power is lost and one TI CC1352 which has a radio co-processor to manage the wireless communication. Two nodes and a sniffer (a third CC1352 under constant power to monitor the testbed's wireless communication and physical status and report results) make up a testbed. The design is extensible to more than two nodes, and will be used with more nodes in the future.
+
+I picked up this project when it had just been started; the hardware had been selected and verified, and the basic layout of the firmware had been written. I spent a summer and some time during the semester taking the starting setup left by one of the other group members, finishing the project to a usable state to get experimental data, and optimizing the original design layout along the way. After the testbed proved to be operational, we made a few major changes to improve on the original design, then this project was handed back to others in the group to manage and run experiments while I focus my efforts on BOBBER. As both projects are run by Dr. Duwe, I am still around for them to ask questions on implementation details or any issues that arise.
 
 
 [< Back to Projects](/projects)

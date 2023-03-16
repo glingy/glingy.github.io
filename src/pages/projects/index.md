@@ -3,7 +3,7 @@
 [**ATSAMD21 Playground** Design of a custom board using an ATSAMD21 microcontroller to aid in teaching new solar car members very low-level programming](/projects/playground)
 
 # Research Projects
-[**Bobber iFPGA Accelerator** Improving the efficiency of an FPGA accelerator for intermittent computing](/projects/bobber)
+[**BOBBER iFPGA Accelerator** Improving the efficiency of an FPGA accelerator for intermittent computing](/projects/bobber)
 [**Wireless Intermittent Testbed** Firmware design of an experimental testbed for testing wireless communication under intermittent power](/projects/testbed)
 
 # Solar Car Projects
@@ -15,9 +15,9 @@
 [**Compute Simulator** A program to simulate an ATSAMC21 microcontroller for use with Solar Car for debugging without hardware](/projects/simulator)
 
 # Coursework Projects
+[**CPRE 488 ZedBoard Projects** CPRE 488 projects using a zedboard to perform various tasks (NES Emulation, quadcopter control, image acquisition, and more)](/projects/zedboard)
 [**CPRE 381 MIPS32 processor in VHDL** CPRE 381 project to design a pipelined processor in VHDL to execute MIPS instructions](/projects/mips)
 [**CPRE 288 Roomba Control** CPRE 288 project to program a TIVA microcontroller to control a Roomba and act as a WebSocket Server for remote control](/projects/roomba)
-[**CPRE 488 ZedBoard Projects** CPRE 488 projects using a zedboard to perform various tasks (NES Emulation, quadcopter control, image acquisition, and more)](/projects/zedboard)
 
 <style scoped lang="less">
 ul {

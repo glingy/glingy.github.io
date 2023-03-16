@@ -5,8 +5,8 @@ As software lead for Solar Car, my main goal is to teach new members as much of 
 The playground board I ended up with is a pair of Atmel SAM D21 microcontrollers (MCUs) and various peripherals for users to see the effects of their code upon the real world to help them visualize the idea that writing to specific location in memory causes a physical effect. One MCU (the target) is connected to all the peripherals, 4 buttons, 8 LEDs, a 7-segment display, a piezo buzzer, a potentiometer, and an RGB LED which communicates over SPI. The other MCU (the debugger) is connected to the debug port of the target and over UART. The debugger is running a version of BlackMagic Probe (https://github.com/blackmagic-debug/blackmagic) firmware which I ported to the ATSAMD21. 
 
 <div class="row">
-<img src="../../assets/playground_front.png" alt="Playground Front" />
-<img src="../../assets/playground_back.png" alt="Playground Back" />
+<img src="../../assets/images/playground_front.png" alt="Playground Front" />
+<img src="../../assets/images/playground_back.png" alt="Playground Back" />
 </div>
 
 To get started with the board is as simple as plugging it in, installing VSCode, cloning the repository and installing the extensions when VSCode prompts you. The development environment uses PlatformIO (https://platformio.org) and a custom extension to more easily manage projects within the development repository.
