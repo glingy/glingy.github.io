@@ -17,6 +17,9 @@
 [**CPRE 381 MIPS32 processor in VHDL** CPRE 381 project to design a pipelined processor in VHDL to execute MIPS instructions](/projects/mips)
 [**CPRE 288 Roomba Control** CPRE 288 project to program a TIVA microcontroller to control a Roomba and act as a WebSocket Server for remote control](/projects/roomba)
 
+# Older Projects
+[**Game Controller** Game controller using an ATSAMD21 to play a version of BrickBreaker on an LCD display (old blog post from my senior year of high school)](https://dev.to/glingy/diy-arduino-handheld-game-1hb1)
+
 <style scoped lang="less">
 ul {
   list-style-type: '>';

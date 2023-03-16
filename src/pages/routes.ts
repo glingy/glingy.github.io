@@ -2,6 +2,7 @@ import { createRoutes } from "../router";
 
 import Index from './index.md'
 
+import OtherDocuments from './other.md'
 import ProjectsIndex from './projects/index.md'
 
 import ProjectsAsic from './projects/asic.md'
@@ -74,5 +75,9 @@ export default createRoutes([
       }
     ]
   },
+  {
+    path: '/other',
+    component: OtherDocuments,
+  }
 
 ])
