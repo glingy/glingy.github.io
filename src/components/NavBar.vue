@@ -21,7 +21,8 @@ function hide() {
     <div>
       <router-link to='/'><img src="/turtle.svg" width="40"/></router-link>
       <router-link to='/projects'>Projects</router-link>
-      <router-link to='/other'>Other Documents</router-link>
+      <router-link to='/work'>Work</router-link>
+      <router-link to='/docs'>Documents</router-link>
     </div>
     <div>
       <a href="https://github.com/glingy">GitHub</a>

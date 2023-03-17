@@ -4,7 +4,7 @@
 
 # Research Projects
 [**BOBBER iFPGA Accelerator** Improving the efficiency of an FPGA accelerator for intermittent computing](/projects/bobber)
-[**Wireless Intermittent Testbed** Firmware design of an experimental testbed for testing wireless communication under intermittent power](/projects/testbed)
+[**Wireless Intermittent Testbed** Firmware design of an experimental testbed for wireless communication under intermittent power](/projects/testbed)
 
 # Solar Car Projects
 [**Prisum Overview** An overview of the Solar Car for those not familiar with the team as a whole](/projects/prisum)
@@ -18,7 +18,7 @@
 [**CPRE 288 Roomba Control** CPRE 288 project to program a TIVA microcontroller to control a Roomba and act as a WebSocket Server for remote control](/projects/roomba)
 
 # Older Projects
-[**Game Controller** Game controller using an ATSAMD21 to play a version of BrickBreaker on an LCD display (old blog post from my senior year of high school)](https://dev.to/glingy/diy-arduino-handheld-game-1hb1)
+[**Game Controller** Game controller using an ATSAMD21 to play a version of BrickBreaker on an LCD display (old blog post from my senior year of high school, external link)](https://dev.to/glingy/diy-arduino-handheld-game-1hb1)
 
 <style scoped lang="less">
 ul {

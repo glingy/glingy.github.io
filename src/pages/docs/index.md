@@ -1,8 +1,9 @@
-# Other Documents
+# Documents
 
-<a href="/docs/example.pdf"><strong>Cumulative Reflection</strong> Required reflection on my undergraduate experience at ISU</a>
-<a href="/docs/example.pdf"><strong>General Education Reflection</strong> Required reflection on my general education classes at ISU</a>
-<a href="/docs/example.pdf"><strong>Ethics Reflection</strong> Required reflection on Ethics in Engineering</a>
+<a href="/docs/Resume.pdf"><strong>Resume</strong> My current resume in PDF form</a>
+[**Cumulative Reflection** Required reflection on my undergraduate experience at ISU](/docs/cumulative)
+[**General Education Reflection** Required reflection on my general education classes at ISU](/docs/gened)
+[**Ethics Reflection** Required reflection on ethics in engineering](/docs/ethics)
 
 <style scoped lang="less">
 ul {

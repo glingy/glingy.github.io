@@ -5,7 +5,7 @@ const header = "> Hello World!"
 
 <Typing class="header" :text="header" show="0" start="500" end="5000"></Typing>
 
-I'm Gregory Ling, a senior majoring in Computer Engineering at Iowa State University. I lead the software subteam of the Prisum Solar Car Club at ISU, teaching new members how to program the solar car, work with a team researching intermittent computing using FPGA acceleration and wireless power harvesting, and make progress on several other projects as well. I will also be starting my Master's degree in Computer Engineering concurrently in the fall.
+I'm Gregory Ling, a senior majoring in Computer Engineering at Iowa State University. My interests are in very low-level design, at the HDL microarchitecture or C firmware level, with a focus on optimizations. I lead the software subteam of the Prisum Solar Car Club at ISU, training a large group of new members on how to program the solar car. I am currently working with a team researching intermittent computing using FPGA acceleration and wireless power harvesting, and I will be starting my Master's degree in Computer Engineering concurrently in the fall.
 
 <style lang="less">
 .header {
