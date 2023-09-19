@@ -31,6 +31,13 @@ function hide() {
 </template>
 
 <style lang="less">
+#navbar::-webkit-scrollbar { /* this is the one we care about */
+    display: none;
+}
+#navbar::-webkit-scrollbar-thumb { /* we apply the style to actually hide it*/
+    display: none; 
+}   
+
 #navbar {
   position: fixed;
   top: 0;
@@ -38,14 +45,16 @@ function hide() {
   height: var(--navbar-height);
   width: 100%;
   padding: 0;
+  padding-bottom: 2px;
   z-index: 10;
+  overflow-x: scroll;
+  overflow-y: visible;
 
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch;
   justify-content: space-between;
   background-color: var(--navbar-background);
-  border-bottom: 2px solid var(--navbar-background);
 
   font-weight: bold;
 
