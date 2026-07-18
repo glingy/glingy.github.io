@@ -1,7 +1,7 @@
 # Main Projects
 _[**CPRE 488 ZedBoard Projects** CPRE 488 projects using a zedboard to perform various tasks (NES Emulation, quadcopter control, image acquisition, and more)](/projects/zedboard)_
-_[**Custom ASIC Design & Fabrication** Senior Design project to design and submit a custom ASIC for fabrication using the eFabless OpenROAD process](/projects/asic)_
 _[**ATSAMD21 Playground** Design of a custom board using an ATSAMD21 microcontroller to aid in teaching new solar car members very low-level programming](/projects/playground)_
+_[**Custom ASIC Design & Fabrication** Senior Design project to design and submit a custom ASIC for fabrication using the eFabless OpenROAD process](/projects/asic)_
 
 # Research Projects
 _[**BOBBER iFPGA Accelerator** Improving the efficiency of an FPGA accelerator for intermittent computing](/projects/bobber)_
