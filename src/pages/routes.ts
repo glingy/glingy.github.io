@@ -92,14 +92,6 @@ export default createRoutes([
             {
                 path: '/docs/cumulative',
                 component: DocsCumulative,
-            },
-            {
-                path: '/docs/gened',
-                component: DocsGened,
-            },
-            {
-                path: '/docs/ethics',
-                component: DocsEthics,
             }
         ]
     },
